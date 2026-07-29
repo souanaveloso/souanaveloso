@@ -100,8 +100,8 @@ strong{font-weight:600}
   padding:17px 30px;border:1px solid transparent;border-radius:2px;
   text-decoration:none;cursor:pointer;transition:transform .18s ease,background .18s ease;
 }
-.btn--primary{background:var(--bile);color:#16100A;border-color:var(--bile)}
-.btn--primary:hover{transform:translateY(-2px);background:#E09B39}
+.btn--primary{background:var(--bile);color:var(--ink);border-color:var(--bile);font-weight:700}
+.btn--primary:hover{transform:translateY(-2px);background:#F0A63F}
 .btn--ghost{background:transparent;color:var(--txt-light);border-color:var(--line)}
 .btn--ghost:hover{border-color:var(--txt-light);transform:translateY(-2px)}
 .section--light .btn--ghost{color:var(--txt-dark);border-color:var(--line-dark)}
@@ -224,21 +224,24 @@ strong{font-weight:600}
   min-height:520px;padding:34px 28px 36px;color:var(--c);
   transition:background .45s ease}
 .elcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--c);z-index:3}
-.elcard::after{content:"";position:absolute;inset:0;pointer-events:none;
+.elcard::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(120% 70% at 50% 108%, var(--glow), transparent 70%);
   opacity:.55;transition:opacity .45s ease}
 .elcard:hover::after{opacity:.95}
-.elcard__art{position:absolute;inset:0;display:flex;align-items:stretch;justify-content:center;
+.elcard__art{position:absolute;inset:0;z-index:0;display:flex;align-items:stretch;justify-content:center;
   opacity:.62;transition:opacity .5s ease,transform .8s ease;pointer-events:none}
 .elcard:hover .elcard__art{opacity:.9;transform:scale(1.05)}
 .elart{width:100%;height:100%}
+.elcard__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg, transparent 0%, transparent 30%, rgba(12,19,23,.58) 54%, var(--ink) 84%)}
 .elcard__body{position:relative;z-index:2}
 .elcard__head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.elcard__el{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.elcard__el{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--c);font-weight:500}
 .elcard h3{color:var(--txt-light);font-size:31px;margin-bottom:8px}
 .elcard__verb{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--c);margin-bottom:12px}
-.elcard p{font-size:15px;line-height:1.55;color:var(--txt-light-mute)}
+  color:var(--c);margin-bottom:12px;font-weight:500}
+.elcard p{font-size:15.5px;line-height:1.6;color:var(--txt-light);font-weight:500;opacity:.94}
 @media(max-width:900px){
   .elstrip{grid-template-columns:1fr 1fr}
   .elcard{min-height:420px}
@@ -591,6 +594,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
   <div class="elstrip rv">
     <article class="elcard" style="--c:var(--bile);--deep:var(--bile-deep);--glow:rgba(231,151,46,.30)">
       <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M22 410 L160 292 L298 410" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.85"/><path d="M39 366 L160 248 L281 366" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.75"/><path d="M56 322 L160 204 L264 322" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.65"/><path d="M73 278 L160 160 L247 278" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/><path d="M90 234 L160 116 L230 234" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><path d="M107 190 L160 72 L213 190" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.35"/><path d="M124 146 L160 28 L196 146" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.25"/><line x1="30" y1="430" x2="30" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="56" y1="430" x2="56" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="82" y1="430" x2="82" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="108" y1="430" x2="108" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="134" y1="430" x2="134" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="160" y1="430" x2="160" y2="404" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="186" y1="430" x2="186" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="212" y1="430" x2="212" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="238" y1="430" x2="238" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="264" y1="430" x2="264" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="290" y1="430" x2="290" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/></svg></div>
+      <div class="elcard__scrim"></div>
       <div class="elcard__body">
         <div class="elcard__head">
           <svg class="glyph glyph--lg"><use href="#g-fogo"/></svg>
@@ -604,6 +608,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 
     <article class="elcard" style="--c:var(--sangue);--deep:var(--sangue-deep);--glow:rgba(219,98,90,.30)">
       <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-20 90 C 70 64, 180 116, 340 77" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.8"/><path d="M-20 144 C 70 121, 180 167, 340 133" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.71"/><path d="M-20 198 C 70 178, 180 218, 340 188" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.62"/><path d="M-20 252 C 70 235, 180 269, 340 244" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.53"/><path d="M-20 306 C 70 292, 180 320, 340 299" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.44"/><path d="M-20 360 C 70 349, 180 371, 340 355" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.35"/><circle cx="109" cy="104" r="1.2" fill="currentColor" opacity="0.21"/><circle cx="170" cy="182" r="1.2" fill="currentColor" opacity="0.52"/><circle cx="77" cy="81" r="2.8" fill="currentColor" opacity="0.21"/><circle cx="40" cy="203" r="1.2" fill="currentColor" opacity="0.53"/><circle cx="198" cy="260" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="130" cy="401" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="53" cy="201" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="178" cy="296" r="1.2" fill="currentColor" opacity="0.40"/><circle cx="201" cy="184" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="195" cy="229" r="2.8" fill="currentColor" opacity="0.47"/><circle cx="150" cy="382" r="2.2" fill="currentColor" opacity="0.29"/><circle cx="246" cy="302" r="1.6" fill="currentColor" opacity="0.21"/><circle cx="102" cy="228" r="2.2" fill="currentColor" opacity="0.45"/><circle cx="98" cy="403" r="1.2" fill="currentColor" opacity="0.37"/><circle cx="62" cy="173" r="2.8" fill="currentColor" opacity="0.34"/><circle cx="295" cy="78" r="2.2" fill="currentColor" opacity="0.31"/><circle cx="116" cy="229" r="2.8" fill="currentColor" opacity="0.21"/><circle cx="41" cy="147" r="1.2" fill="currentColor" opacity="0.20"/><circle cx="219" cy="283" r="2.8" fill="currentColor" opacity="0.29"/><circle cx="127" cy="291" r="1.2" fill="currentColor" opacity="0.53"/><circle cx="118" cy="270" r="2.8" fill="currentColor" opacity="0.20"/><circle cx="238" cy="97" r="1.6" fill="currentColor" opacity="0.33"/><circle cx="282" cy="229" r="1.6" fill="currentColor" opacity="0.35"/><circle cx="174" cy="368" r="2.8" fill="currentColor" opacity="0.50"/><circle cx="95" cy="200" r="2.2" fill="currentColor" opacity="0.43"/><circle cx="125" cy="133" r="1.2" fill="currentColor" opacity="0.25"/><circle cx="82" cy="134" r="2.8" fill="currentColor" opacity="0.49"/><circle cx="67" cy="151" r="1.6" fill="currentColor" opacity="0.34"/><circle cx="122" cy="254" r="1.6" fill="currentColor" opacity="0.44"/><circle cx="165" cy="272" r="1.2" fill="currentColor" opacity="0.35"/><circle cx="268" cy="393" r="2.8" fill="currentColor" opacity="0.33"/><circle cx="129" cy="223" r="2.8" fill="currentColor" opacity="0.20"/><circle cx="34" cy="125" r="1.6" fill="currentColor" opacity="0.22"/><circle cx="189" cy="87" r="1.6" fill="currentColor" opacity="0.38"/><circle cx="291" cy="271" r="1.2" fill="currentColor" opacity="0.50"/><circle cx="193" cy="103" r="2.2" fill="currentColor" opacity="0.53"/><circle cx="190" cy="221" r="1.2" fill="currentColor" opacity="0.49"/><circle cx="304" cy="218" r="2.8" fill="currentColor" opacity="0.30"/><circle cx="56" cy="320" r="2.2" fill="currentColor" opacity="0.36"/><circle cx="216" cy="236" r="1.6" fill="currentColor" opacity="0.53"/><circle cx="168" cy="103" r="1.2" fill="currentColor" opacity="0.46"/><circle cx="101" cy="281" r="1.2" fill="currentColor" opacity="0.44"/><circle cx="90" cy="182" r="1.6" fill="currentColor" opacity="0.31"/><circle cx="79" cy="245" r="2.2" fill="currentColor" opacity="0.42"/><circle cx="193" cy="334" r="1.6" fill="currentColor" opacity="0.48"/><circle cx="253" cy="316" r="1.6" fill="currentColor" opacity="0.25"/></svg></div>
+      <div class="elcard__scrim"></div>
       <div class="elcard__body">
         <div class="elcard__head">
           <svg class="glyph glyph--lg"><use href="#g-ar"/></svg>
@@ -617,6 +622,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 
     <article class="elcard" style="--c:var(--atra);--deep:var(--atra-deep);--glow:rgba(133,131,218,.30)">
       <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><line x1="20" y1="40" x2="20" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="43" y1="40" x2="43" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="67" y1="40" x2="67" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="90" y1="40" x2="90" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="113" y1="40" x2="113" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="136" y1="40" x2="136" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="160" y1="40" x2="160" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="183" y1="40" x2="183" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="206" y1="40" x2="206" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="230" y1="40" x2="230" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="253" y1="40" x2="253" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="276" y1="40" x2="276" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="300" y1="40" x2="300" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="40" x2="300" y2="40" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="71" x2="300" y2="71" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="102" x2="300" y2="102" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="133" x2="300" y2="133" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="164" x2="300" y2="164" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="195" x2="300" y2="195" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><rect x="20" y="214" width="280" height="7" fill="currentColor" opacity="0.24"/><rect x="20" y="227" width="280" height="13" fill="currentColor" opacity="0.29"/><rect x="20" y="246" width="280" height="5" fill="currentColor" opacity="0.35"/><rect x="20" y="257" width="280" height="20" fill="currentColor" opacity="0.41"/><rect x="20" y="283" width="280" height="9" fill="currentColor" opacity="0.46"/><rect x="20" y="298" width="280" height="16" fill="currentColor" opacity="0.52"/><rect x="20" y="320" width="280" height="6" fill="currentColor" opacity="0.57"/><rect x="20" y="332" width="280" height="26" fill="currentColor" opacity="0.62"/><rect x="20" y="364" width="280" height="11" fill="currentColor" opacity="0.68"/><rect x="20" y="381" width="280" height="19" fill="currentColor" opacity="0.73"/></svg></div>
+      <div class="elcard__scrim"></div>
       <div class="elcard__body">
         <div class="elcard__head">
           <svg class="glyph glyph--lg"><use href="#g-terra"/></svg>
@@ -630,6 +636,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 
     <article class="elcard" style="--c:var(--fleuma);--deep:var(--fleuma-deep);--glow:rgba(79,179,151,.30)">
       <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><ellipse cx="160" cy="432" rx="34" ry="20" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.85"/><ellipse cx="160" cy="432" rx="64" ry="39" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.77"/><ellipse cx="160" cy="432" rx="94" ry="58" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.68"/><ellipse cx="160" cy="432" rx="124" ry="77" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.59"/><ellipse cx="160" cy="432" rx="154" ry="96" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.51"/><ellipse cx="160" cy="432" rx="184" ry="115" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.42"/><ellipse cx="160" cy="432" rx="214" ry="134" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.34"/><ellipse cx="160" cy="432" rx="244" ry="153" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.25"/><ellipse cx="160" cy="432" rx="274" ry="172" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.17"/><path d="M160 62 C 196 112, 208 140, 208 160 A 48 48 0 1 1 112 160 C 112 140, 124 112, 160 62 Z" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.7"/></svg></div>
+      <div class="elcard__scrim"></div>
       <div class="elcard__body">
         <div class="elcard__head">
           <svg class="glyph glyph--lg"><use href="#g-agua"/></svg>
