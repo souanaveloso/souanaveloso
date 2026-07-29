@@ -2,7 +2,11 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0C1317">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Ana Veloso | Os 4 Temperamentos aplicados ao negócio | Palestras e treinamentos in-company</title>
 <meta name="description" content="Treinadora comportamental e especialista na ciência dos 4 temperamentos aplicada ao mercado de trabalho. Palestras, workshops e treinamentos in-company para empresas que perdem dinheiro em conflito, retrabalho e rotatividade.">
 <meta property="og:title" content="Ana Veloso: Os 4 Temperamentos aplicados ao negócio">
@@ -54,13 +58,17 @@
   --mono:"IBM Plex Mono", ui-monospace, monospace;
   --maxw:1180px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-optical-sizing:auto}
 body{
   background:var(--ink);color:var(--txt-light);
   font-family:var(--body);font-size:17px;line-height:1.62;
   font-weight:400;letter-spacing:-.003em;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
+}
+a,button,.cell,.eldot,.qp{touch-action:manipulation}
+@media(max-width:640px){
+  input,select,textarea{font-size:16px}
 }
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -93,6 +101,15 @@ strong{font-weight:600}
 .glyph{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.3;flex:none}
 .glyph--lg{width:34px;height:34px;stroke-width:1.1}
 
+/* ---------- barra de progresso ---------- */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:70;background:rgba(0,0,0,.2)}
+.progress__bar{
+  height:100%;width:100%;transform:scaleX(0);transform-origin:left;
+  background:linear-gradient(90deg,var(--bile),var(--sangue),var(--atra),var(--fleuma));
+  will-change:transform;
+}
+@media(prefers-reduced-motion:no-preference){.progress__bar{transition:transform .1s linear}}
+
 /* ---------- botões ---------- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
@@ -109,6 +126,28 @@ strong{font-weight:600}
 .btn--wide{width:100%}
 :focus-visible{outline:2px solid var(--bile);outline-offset:3px}
 
+/* ---------- barra fixa mobile ---------- */
+.mcta{
+  position:fixed;left:12px;right:12px;bottom:12px;z-index:55;
+  display:none;align-items:stretch;gap:10px;
+  padding-bottom:env(safe-area-inset-bottom,0);
+  transform:translateY(140%);transition:transform .35s ease;
+}
+.mcta.show{transform:none}
+.mcta__wpp{
+  flex:none;width:52px;display:flex;align-items:center;justify-content:center;
+  background:var(--ink-2);border:1px solid var(--line);border-radius:3px;color:var(--fleuma);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+}
+.mcta__wpp svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.5}
+.mcta__btn{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  background:var(--bile);color:var(--ink);font-weight:700;font-size:14.5px;
+  border-radius:3px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35);
+}
+@media(max-width:940px){.mcta{display:flex}}
+@media(min-width:941px){.mcta{display:none!important}}
+
 /* ---------- topo ---------- */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:60;
@@ -124,7 +163,9 @@ strong{font-weight:600}
 .nav__links a{font-size:14.5px;text-decoration:none;color:var(--txt-light-mute);transition:color .2s}
 .nav__links a:hover{color:var(--txt-light)}
 .nav .btn{padding:11px 20px;font-size:13.5px}
+.cta-short{display:none}
 @media(max-width:940px){.nav__links a:not(.btn){display:none}.brand__tag{display:none}}
+@media(max-width:400px){.cta-full{display:none}.cta-short{display:inline}}
 
 /* ---------- hero ---------- */
 .hero{position:relative;padding:150px 0 78px;overflow:hidden}
@@ -246,7 +287,74 @@ strong{font-weight:600}
   .elstrip{grid-template-columns:1fr 1fr}
   .elcard{min-height:420px}
 }
-@media(max-width:520px){.elstrip{grid-template-columns:1fr}.elcard{min-height:360px}}
+@media(max-width:640px){
+  .elstrip{
+    display:flex;grid-template-columns:none;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    scroll-padding-left:20px;gap:1px;margin-left:-20px;margin-right:-20px;
+  }
+  .elstrip::-webkit-scrollbar{display:none}
+  .elstrip{scrollbar-width:none}
+  .elcard{flex:0 0 84%;scroll-snap-align:center;min-height:400px}
+  .elcard:first-child{margin-left:20px}
+  .elcard:last-child{margin-right:20px}
+}
+.elhint{
+  display:none;align-items:center;gap:8px;margin-top:14px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--txt-light-mute);transition:opacity .4s ease;
+}
+.elhint svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;animation:elhint-move 1.3s ease-in-out infinite}
+.elhint.is-hidden{opacity:0}
+@keyframes elhint-move{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+@media(max-width:640px){.elhint{display:flex}}
+.eldots{display:none;justify-content:center;gap:8px;margin-top:22px}
+.eldot{width:7px;height:7px;border-radius:50%;background:var(--line);border:0;padding:0}
+.eldot.is-on{background:var(--bile);width:20px;border-radius:4px;transition:width .25s ease,background .25s ease}
+@media(max-width:640px){.eldots{display:flex}}
+
+@media(prefers-reduced-motion:reduce){.elhint svg{animation:none}}
+
+/* ---------- TESTE INTERATIVO ---------- */
+.quiz-sec{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.quiz{max-width:640px;margin-top:44px;position:relative}
+.quiz__progress{display:flex;gap:6px;margin-bottom:18px}
+.qp{flex:1;height:3px;background:var(--line);border:0;padding:0;border-radius:2px;overflow:hidden}
+.qp span{display:block;height:100%;width:0;background:var(--bile);transition:width .3s ease}
+.qp.is-done span{width:100%}
+.qp.is-on span{width:100%;background:linear-gradient(90deg,var(--bile),var(--sangue))}
+.quiz__meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.quiz__meta span{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-light-mute)}
+.quiz__back{background:none;border:0;color:var(--txt-light-mute);font-family:var(--body);font-size:13.5px;cursor:pointer;padding:6px 0}
+.quiz__back:hover{color:var(--txt-light)}
+.quiz__stage{position:relative;min-height:340px}
+.quiz__q{font-family:var(--display);font-size:clamp(22px,3vw,28px);line-height:1.2;
+  font-variation-settings:"SOFT" 40,"WONK" 1;margin-bottom:22px;text-wrap:balance}
+.quiz__opts{display:flex;flex-direction:column;gap:10px}
+.qopt{
+  display:block;width:100%;text-align:left;background:var(--ink);border:1px solid var(--line);
+  color:var(--txt-light);padding:18px 20px;border-radius:3px;font-family:var(--body);
+  font-size:15.5px;line-height:1.4;cursor:pointer;transition:border-color .2s ease,background .2s ease,transform .15s ease;
+}
+.qopt:hover{border-color:var(--txt-light-mute);background:var(--ink-2)}
+.qopt:active{transform:scale(.98)}
+.quiz__fade{animation:qfade .35s ease}
+@keyframes qfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.qres{position:relative;border-left:3px solid var(--c);padding:28px 26px;
+  background:linear-gradient(150deg,var(--tint,rgba(231,151,46,.14)),transparent 65%)}
+.qres__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--c);margin-bottom:14px}
+.qres__head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.qres__name{font-family:var(--display);font-size:clamp(30px,4vw,40px);color:var(--txt-light);letter-spacing:-.02em}
+.qres__role{font-size:15px;color:var(--txt-light-mute);margin-bottom:20px}
+.qres__line{font-size:16px;line-height:1.6;color:var(--txt-light);margin-bottom:22px}
+.qres__bridge{font-family:var(--display);font-style:italic;font-size:19px;line-height:1.34;
+  color:var(--c);font-variation-settings:"SOFT" 55,"WONK" 1;margin-bottom:24px}
+.qres__cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.qres__reset{background:none;border:0;color:var(--txt-light-mute);font-family:var(--body);
+  font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.qres__reset:hover{color:var(--txt-light)}
+@media(max-width:640px){.qres{padding:24px 20px}}
 
 /* ---------- QUADRANTE ---------- */
 .quad{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;margin-top:52px}
@@ -455,6 +563,17 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 </head>
 <body>
 
+<!-- barra de progresso de leitura -->
+<div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+<!-- barra fixa de ação (mobile) -->
+<div class="mcta" id="mCta">
+  <a class="mcta__wpp" id="mCtaWpp" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp com a Ana">
+    <svg viewBox="0 0 24 24"><path d="M4 20l1.4-4.2A8 8 0 1 1 9 18.6Z"/><path d="M9 10.5c0 3 2.5 5.5 5.5 5.5"/></svg>
+  </a>
+  <a class="mcta__btn" href="#contato">Quero minha proposta</a>
+</div>
+
 <!-- glifos alquímicos dos quatro elementos -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="g-fogo" viewBox="0 0 24 24"><path d="M12 3.2 22 20.8H2Z" stroke-linejoin="round"/></symbol>
@@ -475,7 +594,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       <a href="#quadrante">O quadrante</a>
       <a href="#palestra">A palestra</a>
       <a href="#ana">Quem é Ana</a>
-      <a class="btn btn--primary" href="#contato">Levar para minha empresa</a>
+      <a class="btn btn--primary" href="#contato"><span class="cta-full">Levar para minha empresa</span><span class="cta-short">Contratar</span></a>
     </nav>
   </div>
 </header>
@@ -589,9 +708,13 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
     <div class="eyebrow">Fogo · Ar · Terra · Água</div>
     <h2>Quatro modos de funcionar. Todo time tem os quatro.</h2>
     <p class="lead">A teoria dos temperamentos nasceu associada aos quatro elementos, e a imagem continua exata: dentro de uma empresa, cada perfil se move como o elemento que o representa. Um empurra, um espalha, um sustenta, um estabiliza.</p>
+    <div class="elhint" id="elHint">
+      <span>Deslize para o lado</span>
+      <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+    </div>
   </div>
 
-  <div class="elstrip rv">
+  <div class="elstrip rv" id="elStrip">
     <article class="elcard" style="--c:var(--bile);--deep:var(--bile-deep);--glow:rgba(231,151,46,.30)">
       <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M22 410 L160 292 L298 410" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.85"/><path d="M39 366 L160 248 L281 366" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.75"/><path d="M56 322 L160 204 L264 322" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.65"/><path d="M73 278 L160 160 L247 278" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/><path d="M90 234 L160 116 L230 234" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><path d="M107 190 L160 72 L213 190" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.35"/><path d="M124 146 L160 28 L196 146" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.25"/><line x1="30" y1="430" x2="30" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="56" y1="430" x2="56" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="82" y1="430" x2="82" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="108" y1="430" x2="108" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="134" y1="430" x2="134" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="160" y1="430" x2="160" y2="404" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="186" y1="430" x2="186" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="212" y1="430" x2="212" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="238" y1="430" x2="238" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="264" y1="430" x2="264" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="290" y1="430" x2="290" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/></svg></div>
       <div class="elcard__scrim"></div>
@@ -647,6 +770,35 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
         <p>Aguenta a rotina que os outros três largam. E some exatamente quando precisaria se impor.</p>
       </div>
     </article>
+  </div>
+  <div class="eldots" id="elDots" aria-hidden="true">
+    <button class="eldot is-on" data-i="0"></button>
+    <button class="eldot" data-i="1"></button>
+    <button class="eldot" data-i="2"></button>
+    <button class="eldot" data-i="3"></button>
+  </div>
+</section>
+
+<!-- ====================== TESTE INTERATIVO ====================== -->
+<section class="section quiz-sec" id="teste">
+  <div class="wrap rv" style="max-width:760px">
+    <div class="eyebrow">Teste rápido · 30 segundos</div>
+    <h2>Qual temperamento está pilotando você agora?</h2>
+    <p class="lead">Quatro reações rápidas, sem certo ou errado. No final, o seu perfil dominante, do mesmo jeito que Ana lê em sala.</p>
+
+    <div class="quiz" id="quiz">
+      <div class="quiz__progress" id="quizProgress">
+        <button class="qp" data-i="0"><span></span></button>
+        <button class="qp" data-i="1"><span></span></button>
+        <button class="qp" data-i="2"><span></span></button>
+        <button class="qp" data-i="3"><span></span></button>
+      </div>
+      <div class="quiz__meta">
+        <span id="quizStep">Pergunta 1 de 4</span>
+        <button type="button" class="quiz__back" id="quizBack" hidden>Voltar</button>
+      </div>
+      <div class="quiz__stage" id="quizStage"></div>
+    </div>
   </div>
 </section>
 
@@ -1102,6 +1254,224 @@ const obs = new IntersectionObserver(function(entries){
 }, {threshold:.12});
 
 document.querySelectorAll(".rv, .step").forEach(function(el){ obs.observe(el); });
+
+/* =========================================================
+   5. TESTE INTERATIVO DE TEMPERAMENTO
+   ========================================================= */
+const QUIZ = [
+  { q:"Uma entrega atrasou. Sua primeira reação é:", opts:[
+    ["colerico","Cobrar imediatamente e resolver agora."],
+    ["sanguineo","Ligar, acalmar todo mundo e já pensar em outra saída."],
+    ["melancolico","Analisar o que deu errado antes de qualquer decisão."],
+    ["fleumatico","Esperar mais um pouco antes de qualquer cobrança."]
+  ]},
+  { q:"Em uma reunião importante, você costuma:", opts:[
+    ["colerico","Ir direto ao ponto e decidir rápido."],
+    ["sanguineo","Conduzir a conversa e envolver todo mundo."],
+    ["melancolico","Levar dados prontos e bem detalhados."],
+    ["fleumatico","Ouvir mais do que falar."]
+  ]},
+  { q:"Quando alguém discorda de você:", opts:[
+    ["colerico","Defende sua posição com firmeza."],
+    ["sanguineo","Busca um jeito de todo mundo ficar bem."],
+    ["melancolico","Pede tempo para repensar com calma."],
+    ["fleumatico","Evita o confronto direto."]
+  ]},
+  { q:"O que mais tira você do sério na empresa:", opts:[
+    ["colerico","Lentidão e gente que não decide."],
+    ["sanguineo","Rotina repetitiva e sem estímulo."],
+    ["melancolico","Falta de padrão e de critério."],
+    ["fleumatico","Pressão e mudança de planos de última hora."]
+  ]}
+];
+
+const quizStage = document.getElementById("quizStage");
+const quizStep = document.getElementById("quizStep");
+const quizBack = document.getElementById("quizBack");
+const quizDots = document.querySelectorAll("#quizProgress .qp");
+let qIndex = 0;
+let qTally = { colerico:0, sanguineo:0, melancolico:0, fleumatico:0 };
+let qHistory = [];
+
+function vibrate(ms){ if(navigator.vibrate){ try{ navigator.vibrate(ms); }catch(e){} } }
+
+function renderQuizDots(){
+  quizDots.forEach(function(d,i){
+    d.classList.toggle("is-on", i === qIndex);
+    d.classList.toggle("is-done", i < qIndex || (i === qIndex && qIndex >= QUIZ.length));
+  });
+}
+
+function renderQuestion(){
+  const item = QUIZ[qIndex];
+  quizStep.textContent = "Pergunta " + (qIndex+1) + " de " + QUIZ.length;
+  quizBack.hidden = qIndex === 0;
+  renderQuizDots();
+
+  const wrap = document.createElement("div");
+  wrap.className = "quiz__fade";
+  const qEl = document.createElement("div");
+  qEl.className = "quiz__q";
+  qEl.textContent = item.q;
+  const optsEl = document.createElement("div");
+  optsEl.className = "quiz__opts";
+
+  item.opts.forEach(function(opt){
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "qopt";
+    b.textContent = opt[1];
+    b.addEventListener("click", function(){
+      vibrate(8);
+      qTally[opt[0]]++;
+      qHistory.push(opt[0]);
+      qIndex++;
+      if(qIndex >= QUIZ.length){ renderResult(); } else { renderQuestion(); }
+    });
+    optsEl.appendChild(b);
+  });
+
+  wrap.appendChild(qEl);
+  wrap.appendChild(optsEl);
+  quizStage.innerHTML = "";
+  quizStage.appendChild(wrap);
+}
+
+function renderResult(){
+  quizStep.textContent = "Resultado";
+  quizBack.hidden = false;
+  quizDots.forEach(function(d){ d.classList.add("is-done"); d.classList.remove("is-on"); });
+
+  const ordem = ["colerico","sanguineo","melancolico","fleumatico"];
+  let melhor = ordem[0];
+  ordem.forEach(function(k){ if(qTally[k] > qTally[melhor]) melhor = k; });
+  const d = DOSSIE[melhor];
+
+  const wrap = document.createElement("div");
+  wrap.className = "quiz__fade qres";
+  wrap.style.setProperty("--c", d.cor);
+  wrap.style.setProperty("--tint", d.tint);
+  wrap.innerHTML =
+    '<div class="qres__eyebrow">Seu perfil dominante agora</div>' +
+    '<div class="qres__head"><svg class="glyph glyph--lg" style="color:' + d.cor + '"><use href="#' + d.glifo + '"/></svg>' +
+      '<span class="qres__name">' + d.nome + '</span></div>' +
+    '<div class="qres__role">' + d.el + ' · ' + d.papel + '</div>' +
+    '<p class="qres__line">' + d.linhas[0][1] + '</p>' +
+    '<p class="qres__bridge">Isso é uma pessoa. Imagine o mapa da sua equipe inteira, com os quatro perfis cruzando ao mesmo tempo.</p>' +
+    '<div class="qres__cta">' +
+      '<a class="btn btn--primary" href="#contato">Quero o mapa da minha equipe</a>' +
+      '<button type="button" class="qres__reset" id="quizReset">Refazer teste</button>' +
+    '</div>';
+  quizStage.innerHTML = "";
+  quizStage.appendChild(wrap);
+
+  document.getElementById("quizReset").addEventListener("click", resetQuiz);
+}
+
+function resetQuiz(){
+  qIndex = 0;
+  qTally = { colerico:0, sanguineo:0, melancolico:0, fleumatico:0 };
+  qHistory = [];
+  renderQuestion();
+}
+
+quizBack.addEventListener("click", function(){
+  if(qIndex >= QUIZ.length){ qIndex = QUIZ.length - 1; } else if(qIndex > 0){ qIndex--; }
+  const last = qHistory.pop();
+  if(last){ qTally[last] = Math.max(0, qTally[last]-1); }
+  renderQuestion();
+});
+
+quizDots.forEach(function(d){
+  d.addEventListener("click", function(){
+    const i = parseInt(d.dataset.i, 10);
+    if(i <= qIndex && qIndex < QUIZ.length){
+      while(qIndex > i){ qHistory.pop(); qIndex--; }
+      renderQuestion();
+    }
+  });
+});
+
+renderQuestion();
+
+/* =========================================================
+   6. CARROSSEL DE ELEMENTOS (mobile)
+   ========================================================= */
+const elStrip = document.getElementById("elStrip");
+const elDots = document.querySelectorAll("#elDots .eldot");
+const elHint = document.getElementById("elHint");
+
+if(elStrip){
+  const cardObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        const i = Array.prototype.indexOf.call(elStrip.children, en.target);
+        elDots.forEach(function(d,di){ d.classList.toggle("is-on", di === i); });
+      }
+    });
+  }, { root: elStrip, threshold:.6 });
+  Array.prototype.forEach.call(elStrip.children, function(c){ cardObs.observe(c); });
+
+  elDots.forEach(function(d){
+    d.addEventListener("click", function(){
+      const i = parseInt(d.dataset.i, 10);
+      const card = elStrip.children[i];
+      if(card){ card.scrollIntoView({behavior:"smooth", inline:"center", block:"nearest"}); }
+    });
+  });
+
+  let hintHidden = false;
+  elStrip.addEventListener("scroll", function(){
+    if(!hintHidden && elHint){ elHint.classList.add("is-hidden"); hintHidden = true; }
+  }, { passive:true });
+}
+
+/* =========================================================
+   7. BARRA DE PROGRESSO + CTA FIXO MOBILE
+   ========================================================= */
+const progressBar = document.getElementById("progressBar");
+let ticking = false;
+function updateProgress(){
+  const h = document.documentElement;
+  const scrolled = h.scrollTop;
+  const max = h.scrollHeight - h.clientHeight;
+  const pct = max > 0 ? Math.min(1, scrolled / max) : 0;
+  if(progressBar){ progressBar.style.transform = "scaleX(" + pct + ")"; }
+  ticking = false;
+}
+window.addEventListener("scroll", function(){
+  if(!ticking){ requestAnimationFrame(updateProgress); ticking = true; }
+}, { passive:true });
+updateProgress();
+
+const mCta = document.getElementById("mCta");
+const mCtaWpp = document.getElementById("mCtaWpp");
+if(mCtaWpp){
+  const msg = "Olá, Ana! Vi o site sobre os 4 temperamentos e quero saber mais sobre levar a palestra para minha empresa.";
+  mCtaWpp.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+}
+
+let heroPassed = false;
+let contatoVisible = false;
+function updateMcta(){
+  if(!mCta) return;
+  mCta.classList.toggle("show", heroPassed && !contatoVisible);
+}
+const heroEl = document.getElementById("topo");
+if(heroEl){
+  new IntersectionObserver(function(entries){
+    heroPassed = !entries[0].isIntersecting;
+    updateMcta();
+  }, { threshold:0 }).observe(heroEl);
+}
+const contatoEl = document.getElementById("contato");
+if(contatoEl){
+  new IntersectionObserver(function(entries){
+    contatoVisible = entries[0].isIntersecting;
+    updateMcta();
+  }, { threshold:.15 }).observe(contatoEl);
+}
+
 </script>
 </body>
 </html>
