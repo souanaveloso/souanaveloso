@@ -14,14 +14,14 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..800,0..100,0..1&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    ANA VELOSO, pagina institucional
    Sistema visual: os quatro humores da teoria clássica,
    traduzidos em elemento, glifo alquímico e cor.
    Fogo · Ar · Terra · Água
-   Tipografia: Fraunces (display, eixos SOFT/WONK)
+   Tipografia: Plus Jakarta Sans (display, títulos)
                Instrument Sans (texto) · IBM Plex Mono (dados)
    ============================================================ */
 :root{
@@ -53,7 +53,7 @@
   --txt-mute:#56626A;
   --txt-light:#EEEBE4;
   --txt-light-mute:#9DADB5;
-  --display:"Fraunces", Georgia, serif;
+  --display:"Plus Jakarta Sans", "Segoe UI", sans-serif;
   --body:"Instrument Sans", system-ui, -apple-system, sans-serif;
   --mono:"IBM Plex Mono", ui-monospace, monospace;
   --maxw:1180px;
@@ -66,7 +66,7 @@ body{
   font-weight:400;letter-spacing:-.003em;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
-a,button,.cell,.eldot,.qp{touch-action:manipulation}
+a,button,.cell,.eldot{touch-action:manipulation}
 @media(max-width:640px){
   input,select,textarea{font-size:16px}
 }
@@ -75,12 +75,11 @@ a{color:inherit}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
 /* ---------- tipografia ---------- */
-h1,h2,h3,.brand__name,.creds__k,.cell__name,.dossier__name,.diag__punch p,.dossier__quote,.elcard h3{
+h1,h2,h3,.brand__name,.cell__name,.dossier__name,.diag__punch p,.dossier__quote,.elcard h3{
   font-family:var(--display);
-  font-variation-settings:"SOFT" 26,"WONK" 1;
-  font-weight:500;
+  font-weight:700;
 }
-h1{font-size:clamp(40px,5.5vw,67px);line-height:1.02;letter-spacing:-.028em;margin-bottom:26px;text-wrap:balance}
+h1{font-size:clamp(38px,5.2vw,64px);line-height:1.14;letter-spacing:-.015em;margin-bottom:26px;text-wrap:balance}
 h2{font-size:clamp(31px,4.3vw,51px);line-height:1.08;letter-spacing:-.022em;margin-bottom:20px;text-wrap:balance}
 h3{font-size:24px;line-height:1.16;letter-spacing:-.015em;margin-bottom:10px}
 p{text-wrap:pretty}
@@ -117,7 +116,7 @@ strong{font-weight:600}
   padding:17px 30px;border:1px solid transparent;border-radius:2px;
   text-decoration:none;cursor:pointer;transition:transform .18s ease,background .18s ease;
 }
-.btn--primary{background:var(--bile);color:var(--ink);border-color:var(--bile);font-weight:700}
+.btn--primary{background:var(--bile);color:#000;border-color:var(--bile);font-weight:700}
 .btn--primary:hover{transform:translateY(-2px);background:#F0A63F}
 .btn--ghost{background:transparent;color:var(--txt-light);border-color:var(--line)}
 .btn--ghost:hover{border-color:var(--txt-light);transform:translateY(-2px)}
@@ -142,7 +141,7 @@ strong{font-weight:600}
 .mcta__wpp svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.5}
 .mcta__btn{
   flex:1;display:flex;align-items:center;justify-content:center;
-  background:var(--bile);color:var(--ink);font-weight:700;font-size:14.5px;
+  background:var(--bile);color:#000;font-weight:700;font-size:14.5px;
   border-radius:3px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
 @media(max-width:940px){.mcta{display:flex}}
@@ -161,6 +160,7 @@ strong{font-weight:600}
 .brand__tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--txt-light-mute)}
 .nav__links{display:flex;align-items:center;gap:28px}
 .nav__links a{font-size:14.5px;text-decoration:none;color:var(--txt-light-mute);transition:color .2s}
+.nav__links .btn--primary{color:#000}
 .nav__links a:hover{color:var(--txt-light)}
 .nav .btn{padding:11px 20px;font-size:13.5px}
 .cta-short{display:none}
@@ -183,12 +183,8 @@ strong{font-weight:600}
 .hero__rule i:nth-child(2){background:var(--sangue)}
 .hero__rule i:nth-child(3){background:var(--atra)}
 .hero__rule i:nth-child(4){background:var(--fleuma)}
-.hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:64px;align-items:center}
-.hero h1 .mark{
-  font-style:italic;font-variation-settings:"SOFT" 60,"WONK" 1;
-  background:linear-gradient(96deg,var(--bile) 0%,var(--sangue) 34%,var(--atra) 68%,var(--fleuma) 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
+.hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:64px;align-items:start}
+.hero h1 .mark{font-style:italic;color:var(--bile)}
 .hero__sub{font-size:19.5px;line-height:1.58;color:var(--txt-light-mute);max-width:52ch;margin-bottom:34px}
 .hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
 .hero__note{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--txt-light-mute)}
@@ -216,25 +212,6 @@ strong{font-weight:600}
   .portrait__frame img{height:420px}
 }
 
-/* ---------- credenciais ---------- */
-.creds{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:linear-gradient(94deg,var(--bile-deep),var(--sangue-deep) 34%,var(--atra-deep) 68%,var(--fleuma-deep))}
-.creds__grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.creds__item{padding:30px 26px;border-right:1px solid var(--line);position:relative}
-.creds__item::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c)}
-.creds__item:nth-child(1){--c:var(--bile)}
-.creds__item:nth-child(2){--c:var(--sangue)}
-.creds__item:nth-child(3){--c:var(--atra)}
-.creds__item:nth-child(4){--c:var(--fleuma)}
-.creds__item:last-child{border-right:0}
-.creds__k{font-size:34px;line-height:1;margin-bottom:8px;letter-spacing:-.02em;color:var(--c)}
-.creds__v{font-size:14.5px;color:var(--txt-light-mute);line-height:1.45}
-@media(max-width:820px){
-  .creds__grid{grid-template-columns:1fr 1fr}
-  .creds__item:nth-child(2n){border-right:0}
-  .creds__item:nth-child(-n+2){border-bottom:1px solid var(--line)}
-}
-
 /* ---------- diagnóstico ---------- */
 .diag{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
 .symptoms{border-top:1px solid var(--line-dark)}
@@ -252,7 +229,7 @@ strong{font-weight:600}
 .symptom__t{font-weight:600;font-size:17.5px;margin-bottom:4px}
 .symptom__d{font-size:15.5px;color:var(--txt-mute);line-height:1.55}
 .diag__punch{margin-top:34px;padding:26px 28px;background:var(--ink);color:var(--txt-light);border-left:3px solid var(--bile)}
-.diag__punch p{font-size:22px;line-height:1.32;font-style:italic;font-variation-settings:"SOFT" 60,"WONK" 1}
+.diag__punch p{font-size:22px;line-height:1.32;font-style:italic}
 @media(max-width:900px){.diag{grid-template-columns:1fr;gap:38px}}
 
 /* ---------- FAIXA ELEMENTAR ---------- */
@@ -315,47 +292,6 @@ strong{font-weight:600}
 
 @media(prefers-reduced-motion:reduce){.elhint svg{animation:none}}
 
-/* ---------- TESTE INTERATIVO ---------- */
-.quiz-sec{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.quiz{max-width:640px;margin-top:44px;position:relative}
-.quiz__progress{display:flex;gap:6px;margin-bottom:18px}
-.qp{flex:1;height:3px;background:var(--line);border:0;padding:0;border-radius:2px;overflow:hidden}
-.qp span{display:block;height:100%;width:0;background:var(--bile);transition:width .3s ease}
-.qp.is-done span{width:100%}
-.qp.is-on span{width:100%;background:linear-gradient(90deg,var(--bile),var(--sangue))}
-.quiz__meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.quiz__meta span{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-light-mute)}
-.quiz__back{background:none;border:0;color:var(--txt-light-mute);font-family:var(--body);font-size:13.5px;cursor:pointer;padding:6px 0}
-.quiz__back:hover{color:var(--txt-light)}
-.quiz__stage{position:relative;min-height:340px}
-.quiz__q{font-family:var(--display);font-size:clamp(22px,3vw,28px);line-height:1.2;
-  font-variation-settings:"SOFT" 40,"WONK" 1;margin-bottom:22px;text-wrap:balance}
-.quiz__opts{display:flex;flex-direction:column;gap:10px}
-.qopt{
-  display:block;width:100%;text-align:left;background:var(--ink);border:1px solid var(--line);
-  color:var(--txt-light);padding:18px 20px;border-radius:3px;font-family:var(--body);
-  font-size:15.5px;line-height:1.4;cursor:pointer;transition:border-color .2s ease,background .2s ease,transform .15s ease;
-}
-.qopt:hover{border-color:var(--txt-light-mute);background:var(--ink-2)}
-.qopt:active{transform:scale(.98)}
-.quiz__fade{animation:qfade .35s ease}
-@keyframes qfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-
-.qres{position:relative;border-left:3px solid var(--c);padding:28px 26px;
-  background:linear-gradient(150deg,var(--tint,rgba(231,151,46,.14)),transparent 65%)}
-.qres__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--c);margin-bottom:14px}
-.qres__head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
-.qres__name{font-family:var(--display);font-size:clamp(30px,4vw,40px);color:var(--txt-light);letter-spacing:-.02em}
-.qres__role{font-size:15px;color:var(--txt-light-mute);margin-bottom:20px}
-.qres__line{font-size:16px;line-height:1.6;color:var(--txt-light);margin-bottom:22px}
-.qres__bridge{font-family:var(--display);font-style:italic;font-size:19px;line-height:1.34;
-  color:var(--c);font-variation-settings:"SOFT" 55,"WONK" 1;margin-bottom:24px}
-.qres__cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
-.qres__reset{background:none;border:0;color:var(--txt-light-mute);font-family:var(--body);
-  font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.qres__reset:hover{color:var(--txt-light)}
-@media(max-width:640px){.qres{padding:24px 20px}}
-
 /* ---------- QUADRANTE ---------- */
 .quad{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;margin-top:52px}
 .quad__stage{position:relative;padding:38px 42px}
@@ -408,7 +344,7 @@ strong{font-weight:600}
 .dline__k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--txt-light-mute);margin-bottom:5px}
 .dline__v{font-size:16px;line-height:1.55}
 .dossier__quote{margin-top:22px;font-style:italic;font-size:20px;color:var(--c);line-height:1.32;
-  font-variation-settings:"SOFT" 60,"WONK" 1;position:relative;z-index:2}
+  position:relative;z-index:2}
 .dossier.swap{animation:swap .34s ease}
 @keyframes swap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(max-width:900px){
@@ -417,6 +353,17 @@ strong{font-weight:600}
   .dossier{min-height:0;padding-left:22px}
   .dossier__wm{display:none}
 }
+
+/* ---------- mapa (produto individual) ---------- */
+.mapa-sec{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mapa{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;margin-top:44px}
+.mapa__shot{border:1px solid var(--line);padding:12px;background:var(--ink)}
+.mapa__shot img{width:100%;height:auto;display:block}
+.mapa__list{list-style:none;margin:22px 0 26px;display:flex;flex-direction:column;gap:12px}
+.mapa__list li{display:flex;gap:12px;font-size:15.5px;color:var(--txt-light-mute);line-height:1.5}
+.mapa__list li span{color:var(--fleuma);font-family:var(--mono);font-size:13px;padding-top:3px;flex:none}
+.mapa__note{font-size:13px;color:var(--txt-light-mute);margin-top:14px}
+@media(max-width:900px){.mapa{grid-template-columns:1fr;gap:34px}}
 
 /* ---------- formatos ---------- */
 .formats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);margin-top:48px}
@@ -495,9 +442,11 @@ strong{font-weight:600}
 .tstm a:nth-child(4){--c:var(--fleuma)}
 .tstm img{width:100%;height:250px;object-fit:cover;filter:grayscale(.3) brightness(.78);transition:filter .3s,transform .5s}
 .tstm a:hover img{filter:grayscale(0) brightness(.95);transform:scale(1.04)}
-.tstm__play{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;
-  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#fff;
-  background:linear-gradient(to top,rgba(13,20,24,.75),transparent 60%);padding:16px}
+.tstm__ico{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:44px;height:44px;border-radius:50%;background:rgba(12,19,23,.55);
+  display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
+.tstm__ico svg{width:16px;height:16px;fill:#fff;margin-left:2px}
+.tstm a:hover .tstm__ico{background:var(--c);transform:translate(-50%,-50%) scale(1.08)}
 @media(max-width:820px){.tstm{grid-template-columns:1fr 1fr}}
 
 /* ---------- formulário ---------- */
@@ -590,10 +539,9 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       <span class="brand__tag">Comportamento &amp; Resultado</span>
     </a>
     <nav class="nav__links">
-      <a href="#temperamentos">Os quatro</a>
-      <a href="#quadrante">O quadrante</a>
-      <a href="#palestra">A palestra</a>
-      <a href="#ana">Quem é Ana</a>
+      <a href="#temperamentos">Os 4 Temperamentos</a>
+      <a href="#mapa">Descubra seu temperamento</a>
+      <a href="#ana">Quem é Ana Veloso</a>
       <a class="btn btn--primary" href="#contato"><span class="cta-full">Levar para minha empresa</span><span class="cta-short">Contratar</span></a>
     </nav>
   </div>
@@ -609,9 +557,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       <p class="hero__sub">Ana Veloso é treinadora comportamental e especialista na ciência dos 4 temperamentos aplicada ao mercado de trabalho. Ela ensina empresários e líderes a ler pessoas com precisão, transformando isso em produtividade, retenção e decisão mais rápida.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="#contato">Quero essa palestra na minha empresa</a>
-        <a class="btn btn--ghost" href="#temperamentos">Ver o método em 60 segundos</a>
       </div>
-      <p class="hero__note">Resposta em até 24h úteis · Agenda 2026 aberta</p>
     </div>
 
     <div class="portrait">
@@ -621,30 +567,6 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
         <span class="ptag ptag--c"><svg class="glyph"><use href="#g-terra"/></svg>Melancólico</span>
         <span class="ptag ptag--d"><svg class="glyph"><use href="#g-agua"/></svg>Fleumático</span>
         <img src="https://souanaveloso.com.br/wp-content/uploads/2025/08/3B4A7041-683x1024.jpg" alt="Ana Veloso, treinadora comportamental">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== CREDENCIAIS ====================== -->
-<section class="creds">
-  <div class="wrap">
-    <div class="creds__grid">
-      <div class="creds__item">
-        <div class="creds__k">14+</div>
-        <div class="creds__v">anos lidando com pessoas como jornalista e comunicadora</div>
-      </div>
-      <div class="creds__item">
-        <div class="creds__k">03</div>
-        <div class="creds__v">pós-graduações em Neurociência em andamento</div>
-      </div>
-      <div class="creds__item">
-        <div class="creds__k">04</div>
-        <div class="creds__v">temperamentos: a leitura comportamental mais antiga e mais rápida de aplicar</div>
-      </div>
-      <div class="creds__item">
-        <div class="creds__k">08</div>
-        <div class="creds__v">semanas de imersão no Método Origem, criado por ela</div>
       </div>
     </div>
   </div>
@@ -779,35 +701,12 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
   </div>
 </section>
 
-<!-- ====================== TESTE INTERATIVO ====================== -->
-<section class="section quiz-sec" id="teste">
-  <div class="wrap rv" style="max-width:760px">
-    <div class="eyebrow">Teste rápido · 30 segundos</div>
-    <h2>Qual temperamento está pilotando você agora?</h2>
-    <p class="lead">Quatro reações rápidas, sem certo ou errado. No final, o seu perfil dominante, do mesmo jeito que Ana lê em sala.</p>
-
-    <div class="quiz" id="quiz">
-      <div class="quiz__progress" id="quizProgress">
-        <button class="qp" data-i="0"><span></span></button>
-        <button class="qp" data-i="1"><span></span></button>
-        <button class="qp" data-i="2"><span></span></button>
-        <button class="qp" data-i="3"><span></span></button>
-      </div>
-      <div class="quiz__meta">
-        <span id="quizStep">Pergunta 1 de 4</span>
-        <button type="button" class="quiz__back" id="quizBack" hidden>Voltar</button>
-      </div>
-      <div class="quiz__stage" id="quizStage"></div>
-    </div>
-  </div>
-</section>
-
 <!-- ====================== QUADRANTE ====================== -->
 <section class="section" id="quadrante">
   <div class="wrap rv">
     <div class="eyebrow">O quadrante</div>
     <h2>O mesmo mapa, agora como ferramenta de gestão.</h2>
-    <p class="lead">Dois eixos (quente ou frio, seco ou úmido) cruzados em quatro combinações. Cada pessoa tem <strong>um</strong> temperamento dominante, não uma mistura de percentuais. Toque em cada quadrante e veja o dossiê operacional do perfil.</p>
+    <p class="lead">Dois eixos (quente ou frio, seco ou úmido) cruzados em quatro combinações. Cada pessoa tem <strong>um</strong> temperamento, não uma mistura de percentuais. Toque em cada quadrante e veja o dossiê operacional do perfil.</p>
 
     <div class="quad">
       <div class="quad__stage">
@@ -840,6 +739,32 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       </div>
 
       <div class="dossier" id="dossier"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MAPA DO SEU FUNCIONAMENTO ====================== -->
+<section class="section mapa-sec" id="mapa">
+  <div class="wrap rv">
+    <div class="eyebrow">Produto individual · Autoconhecimento</div>
+    <h2>Antes de levar isso para a empresa inteira, descubra o seu.</h2>
+    <p class="lead">O Mapa do Seu Funcionamento é o teste guiado que Ana criou para quem quer clareza sobre o próprio temperamento sem precisar interpretar nada sozinho. Você responde pergunta por pergunta, com orientação em cada uma, e vê o resultado na tela assim que termina.</p>
+
+    <div class="mapa">
+      <div class="mapa__shot">
+        <img src="https://omapadoseufuncionamento.com.br/wp-content/uploads/2026/05/92d73aac-1f15-48ce-ac7e-9fb0e4890f42-1-e1777845346740-1024x535.png" alt="O Mapa do Seu Funcionamento, teste guiado dos 4 temperamentos">
+      </div>
+      <div>
+        <ul class="mapa__list">
+          <li><span>→</span>Teste orientado individual, com Ana conduzindo cada pergunta</li>
+          <li><span>→</span>Resultado na tela assim que você termina, sem espera e sem cálculo</li>
+          <li><span>→</span>PDF para baixar com o seu temperamento, pontos fortes e tendências de comportamento</li>
+          <li><span>→</span>Tabela comparativa dos 4 temperamentos, para entender como lidar com cada perfil</li>
+          <li><span>→</span>Aula introdutória e quatro mini-aulas explicando os 4 temperamentos</li>
+        </ul>
+        <a class="btn btn--primary" href="https://www.omapadoseufuncionamento.com.br" target="_blank" rel="noopener">Saiba mais</a>
+        <p class="mapa__note">Produto individual, para uso pessoal. Diferente das palestras e treinamentos in-company desta página.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -884,7 +809,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
         <h3 style="font-size:28px">Aplicável no dia seguinte, não no próximo semestre.</h3>
       </div>
       <div>
-        <div class="take"><span class="take__i">→</span><span>Identificar o temperamento dominante de alguém em poucos minutos de conversa.</span></div>
+        <div class="take"><span class="take__i">→</span><span>Identificar o temperamento de alguém em poucos minutos de conversa.</span></div>
         <div class="take"><span class="take__i">→</span><span>Ajustar a forma de delegar e de cobrar para cada perfil, sem perder autoridade.</span></div>
         <div class="take"><span class="take__i">→</span><span>Antecipar o conflito estrutural entre dois perfis antes que ele custe uma demissão.</span></div>
         <div class="take"><span class="take__i">→</span><span>Montar time com combinação equilibrada em vez de contratar cópias de si mesmo.</span></div>
@@ -920,7 +845,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       <div class="step">
         <div class="step__n">Etapa 01</div>
         <h3>Mapear</h3>
-        <p class="step__d">Qual é o temperamento dominante de cada pessoa, e o que ele faz sob pressão, que é quando a empresa realmente descobre quem contratou.</p>
+        <p class="step__d">Qual é o temperamento de cada pessoa, e o que ele faz sob pressão, que é quando a empresa realmente descobre quem contratou.</p>
       </div>
       <div class="step">
         <div class="step__n">Etapa 02</div>
@@ -969,24 +894,23 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
   <div class="wrap rv">
     <div class="eyebrow">Prova</div>
     <h2>Quem já passou pelo Método Origem</h2>
-    <p class="lead">Depoimentos em vídeo de alunos da mentoria.</p>
-    <!-- SUBSTITUIR: trocar os links pelos vídeos hospedados e as imagens pelas capas definitivas -->
+    <p class="lead">Depoimentos em vídeo de alunos, no próprio canal.</p>
     <div class="tstm">
-      <a href="https://souanaveloso.com.br/" target="_blank" rel="noopener">
-        <img src="https://souanaveloso.com.br/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-08-at-16.37.44.jpeg" alt="Depoimento de aluno do Método Origem">
-        <span class="tstm__play">Reproduzir</span>
+      <a href="https://youtu.be/tn4VfI85Scw" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/tn4VfI85Scw/hqdefault.jpg" alt="Depoimento em vídeo de aluno do Método Origem">
+        <span class="tstm__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
       </a>
-      <a href="https://souanaveloso.com.br/" target="_blank" rel="noopener">
-        <img src="https://souanaveloso.com.br/wp-content/uploads/2025/11/gabreil.png" alt="Depoimento de aluno do Método Origem">
-        <span class="tstm__play">Reproduzir</span>
+      <a href="https://www.youtube.com/watch?v=Hs3HrAv30II&t=1s" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/Hs3HrAv30II/hqdefault.jpg" alt="Depoimento em vídeo de aluno do Método Origem">
+        <span class="tstm__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
       </a>
-      <a href="https://souanaveloso.com.br/" target="_blank" rel="noopener">
-        <img src="https://souanaveloso.com.br/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-08-at-23.14.50.jpeg" alt="Depoimento de aluno do Método Origem">
-        <span class="tstm__play">Reproduzir</span>
+      <a href="https://www.youtube.com/watch?v=g-qabWezYfs&t=1s" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/g-qabWezYfs/hqdefault.jpg" alt="Depoimento em vídeo de aluno do Método Origem">
+        <span class="tstm__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
       </a>
-      <a href="https://souanaveloso.com.br/" target="_blank" rel="noopener">
-        <img src="https://souanaveloso.com.br/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-09-at-15.32.37.jpeg" alt="Depoimento de aluno do Método Origem">
-        <span class="tstm__play">Reproduzir</span>
+      <a href="https://www.youtube.com/watch?v=sWaZBrOdi80&t=2s" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/sWaZBrOdi80/hqdefault.jpg" alt="Depoimento em vídeo de aluno do Método Origem">
+        <span class="tstm__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
       </a>
     </div>
   </div>
@@ -1124,7 +1048,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 /* =========================================================
    1. CONFIGURACAO: trocar antes de publicar
    ========================================================= */
-const WHATSAPP = "5511999999999";   // <-- número da Ana: 55 + DDD + número
+const WHATSAPP = "5511973159046";   // WhatsApp da Ana Veloso
 
 /* =========================================================
    2. QUADRANTE DOS TEMPERAMENTOS
@@ -1256,146 +1180,7 @@ const obs = new IntersectionObserver(function(entries){
 document.querySelectorAll(".rv, .step").forEach(function(el){ obs.observe(el); });
 
 /* =========================================================
-   5. TESTE INTERATIVO DE TEMPERAMENTO
-   ========================================================= */
-const QUIZ = [
-  { q:"Uma entrega atrasou. Sua primeira reação é:", opts:[
-    ["colerico","Cobrar imediatamente e resolver agora."],
-    ["sanguineo","Ligar, acalmar todo mundo e já pensar em outra saída."],
-    ["melancolico","Analisar o que deu errado antes de qualquer decisão."],
-    ["fleumatico","Esperar mais um pouco antes de qualquer cobrança."]
-  ]},
-  { q:"Em uma reunião importante, você costuma:", opts:[
-    ["colerico","Ir direto ao ponto e decidir rápido."],
-    ["sanguineo","Conduzir a conversa e envolver todo mundo."],
-    ["melancolico","Levar dados prontos e bem detalhados."],
-    ["fleumatico","Ouvir mais do que falar."]
-  ]},
-  { q:"Quando alguém discorda de você:", opts:[
-    ["colerico","Defende sua posição com firmeza."],
-    ["sanguineo","Busca um jeito de todo mundo ficar bem."],
-    ["melancolico","Pede tempo para repensar com calma."],
-    ["fleumatico","Evita o confronto direto."]
-  ]},
-  { q:"O que mais tira você do sério na empresa:", opts:[
-    ["colerico","Lentidão e gente que não decide."],
-    ["sanguineo","Rotina repetitiva e sem estímulo."],
-    ["melancolico","Falta de padrão e de critério."],
-    ["fleumatico","Pressão e mudança de planos de última hora."]
-  ]}
-];
-
-const quizStage = document.getElementById("quizStage");
-const quizStep = document.getElementById("quizStep");
-const quizBack = document.getElementById("quizBack");
-const quizDots = document.querySelectorAll("#quizProgress .qp");
-let qIndex = 0;
-let qTally = { colerico:0, sanguineo:0, melancolico:0, fleumatico:0 };
-let qHistory = [];
-
-function vibrate(ms){ if(navigator.vibrate){ try{ navigator.vibrate(ms); }catch(e){} } }
-
-function renderQuizDots(){
-  quizDots.forEach(function(d,i){
-    d.classList.toggle("is-on", i === qIndex);
-    d.classList.toggle("is-done", i < qIndex || (i === qIndex && qIndex >= QUIZ.length));
-  });
-}
-
-function renderQuestion(){
-  const item = QUIZ[qIndex];
-  quizStep.textContent = "Pergunta " + (qIndex+1) + " de " + QUIZ.length;
-  quizBack.hidden = qIndex === 0;
-  renderQuizDots();
-
-  const wrap = document.createElement("div");
-  wrap.className = "quiz__fade";
-  const qEl = document.createElement("div");
-  qEl.className = "quiz__q";
-  qEl.textContent = item.q;
-  const optsEl = document.createElement("div");
-  optsEl.className = "quiz__opts";
-
-  item.opts.forEach(function(opt){
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "qopt";
-    b.textContent = opt[1];
-    b.addEventListener("click", function(){
-      vibrate(8);
-      qTally[opt[0]]++;
-      qHistory.push(opt[0]);
-      qIndex++;
-      if(qIndex >= QUIZ.length){ renderResult(); } else { renderQuestion(); }
-    });
-    optsEl.appendChild(b);
-  });
-
-  wrap.appendChild(qEl);
-  wrap.appendChild(optsEl);
-  quizStage.innerHTML = "";
-  quizStage.appendChild(wrap);
-}
-
-function renderResult(){
-  quizStep.textContent = "Resultado";
-  quizBack.hidden = false;
-  quizDots.forEach(function(d){ d.classList.add("is-done"); d.classList.remove("is-on"); });
-
-  const ordem = ["colerico","sanguineo","melancolico","fleumatico"];
-  let melhor = ordem[0];
-  ordem.forEach(function(k){ if(qTally[k] > qTally[melhor]) melhor = k; });
-  const d = DOSSIE[melhor];
-
-  const wrap = document.createElement("div");
-  wrap.className = "quiz__fade qres";
-  wrap.style.setProperty("--c", d.cor);
-  wrap.style.setProperty("--tint", d.tint);
-  wrap.innerHTML =
-    '<div class="qres__eyebrow">Seu perfil dominante agora</div>' +
-    '<div class="qres__head"><svg class="glyph glyph--lg" style="color:' + d.cor + '"><use href="#' + d.glifo + '"/></svg>' +
-      '<span class="qres__name">' + d.nome + '</span></div>' +
-    '<div class="qres__role">' + d.el + ' · ' + d.papel + '</div>' +
-    '<p class="qres__line">' + d.linhas[0][1] + '</p>' +
-    '<p class="qres__bridge">Isso é uma pessoa. Imagine o mapa da sua equipe inteira, com os quatro perfis cruzando ao mesmo tempo.</p>' +
-    '<div class="qres__cta">' +
-      '<a class="btn btn--primary" href="#contato">Quero o mapa da minha equipe</a>' +
-      '<button type="button" class="qres__reset" id="quizReset">Refazer teste</button>' +
-    '</div>';
-  quizStage.innerHTML = "";
-  quizStage.appendChild(wrap);
-
-  document.getElementById("quizReset").addEventListener("click", resetQuiz);
-}
-
-function resetQuiz(){
-  qIndex = 0;
-  qTally = { colerico:0, sanguineo:0, melancolico:0, fleumatico:0 };
-  qHistory = [];
-  renderQuestion();
-}
-
-quizBack.addEventListener("click", function(){
-  if(qIndex >= QUIZ.length){ qIndex = QUIZ.length - 1; } else if(qIndex > 0){ qIndex--; }
-  const last = qHistory.pop();
-  if(last){ qTally[last] = Math.max(0, qTally[last]-1); }
-  renderQuestion();
-});
-
-quizDots.forEach(function(d){
-  d.addEventListener("click", function(){
-    const i = parseInt(d.dataset.i, 10);
-    if(i <= qIndex && qIndex < QUIZ.length){
-      while(qIndex > i){ qHistory.pop(); qIndex--; }
-      renderQuestion();
-    }
-  });
-});
-
-renderQuestion();
-
-/* =========================================================
-   6. CARROSSEL DE ELEMENTOS (mobile)
+   5. CARROSSEL DE ELEMENTOS (mobile)
    ========================================================= */
 const elStrip = document.getElementById("elStrip");
 const elDots = document.querySelectorAll("#elDots .eldot");
@@ -1427,7 +1212,7 @@ if(elStrip){
 }
 
 /* =========================================================
-   7. BARRA DE PROGRESSO + CTA FIXO MOBILE
+   6. BARRA DE PROGRESSO + CTA FIXO MOBILE
    ========================================================= */
 const progressBar = document.getElementById("progressBar");
 let ticking = false;
