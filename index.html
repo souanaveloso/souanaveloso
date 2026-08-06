@@ -145,7 +145,12 @@ strong{font-weight:600}
 .nav__links a:hover{color:var(--txt-light)}
 .nav .btn{padding:11px 20px;font-size:13.5px}
 .cta-short{display:none}
-@media(max-width:940px){.nav__links a:not(.btn){display:none}.brand__tag{display:none}}
+@media(max-width:940px){
+  .nav__links a:not(.btn):not(.nav__persist){display:none}
+  .brand__tag{display:none}
+  .nav__persist{font-size:13px;white-space:nowrap}
+}
+@media(max-width:400px){.nav__persist{display:none}}
 @media(max-width:400px){.cta-full{display:none}.cta-short{display:inline}}
 
 /* ---------- hero ---------- */
@@ -188,7 +193,7 @@ strong{font-weight:600}
 .hero h1 .mark{font-style:italic;color:var(--sangue)}
 @media(max-width:960px){
   .hero{
-    padding:118px 0 58px;min-height:82vh;min-height:82dvh;
+    padding:118px 0 58px;min-height:100vh;min-height:100dvh;
     background-image:url("hero-bg-elementos-mobile.png");
   }
 }
@@ -506,7 +511,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
     </a>
     <nav class="nav__links">
       <a href="#temperamentos">Os 4 Temperamentos</a>
-      <a href="produtos.html">Meus Produtos</a>
+      <a href="produtos.html" class="nav__persist">Meus Produtos</a>
       <a href="#ana">Quem é Ana Veloso</a>
       <a class="btn btn--primary" href="#contato"><span class="cta-full">Levar para minha empresa</span><span class="cta-short">Contratar</span></a>
     </nav>
