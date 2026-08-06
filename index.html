@@ -59,7 +59,7 @@
   --maxw:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-optical-sizing:auto}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-optical-sizing:auto;overflow-x:hidden}
 body{
   background:var(--ink);color:var(--txt-light);
   font-family:var(--body);font-size:17px;line-height:1.62;
@@ -156,7 +156,7 @@ strong{font-weight:600}
 /* ---------- hero ---------- */
 .hero{
   position:relative;overflow:hidden;
-  min-height:100vh;min-height:100dvh;
+  min-height:100vh;min-height:calc(100dvh + 70px);
   display:flex;align-items:center;
   padding:132px 0 84px;
   background-image:url("hero-bg-elementos.png");
@@ -193,7 +193,7 @@ strong{font-weight:600}
 .hero h1 .mark{font-style:italic;color:var(--sangue)}
 @media(max-width:960px){
   .hero{
-    padding:118px 0 58px;min-height:100vh;min-height:100dvh;
+    padding:118px 0 58px;min-height:100vh;min-height:calc(100dvh + 70px);
     background-image:url("hero-bg-elementos-mobile.png");
   }
 }
@@ -254,13 +254,11 @@ strong{font-weight:600}
   .elstrip{
     display:flex;grid-template-columns:none;overflow-x:auto;overflow-y:hidden;
     scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-    scroll-padding-left:20px;gap:1px;margin-left:-20px;margin-right:-20px;
+    scroll-padding-left:20px;gap:1px;padding:0 20px;
   }
   .elstrip::-webkit-scrollbar{display:none}
   .elstrip{scrollbar-width:none}
   .elcard{flex:0 0 84%;scroll-snap-align:center;min-height:400px}
-  .elcard:first-child{margin-left:20px}
-  .elcard:last-child{margin-right:20px}
 }
 .elhint{
   display:none;align-items:center;gap:8px;margin-top:14px;
