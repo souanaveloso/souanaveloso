@@ -1147,7 +1147,7 @@ form.addEventListener("submit", function(e){
 
   foot.style.color = "";
   foot.textContent = "Abrindo o WhatsApp com sua mensagem pronta…";
-  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank");
+  window.location.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
 });
 
 /* =========================================================
