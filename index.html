@@ -7,10 +7,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Ana Veloso | Os 4 Temperamentos aplicados ao negócio | Palestras e treinamentos in-company</title>
-<meta name="description" content="Treinadora comportamental e especialista na ciência dos 4 temperamentos aplicada ao mercado de trabalho. Palestras, workshops e treinamentos in-company para empresas que perdem dinheiro em conflito, retrabalho e rotatividade.">
+<title>Ana Veloso | Os 4 Temperamentos aplicados ao negócio | Palestras e treinamentos in company</title>
+<meta name="description" content="Treinadora comportamental e especialista na ciência dos 4 temperamentos aplicada ao mercado de trabalho. Palestras, workshops e treinamentos in company para empresas que perdem dinheiro em conflito, retrabalho e rotatividade.">
 <meta property="og:title" content="Ana Veloso: Os 4 Temperamentos aplicados ao negócio">
-<meta property="og:description" content="Palestras e treinamentos in-company sobre comportamento humano aplicado a resultado.">
+<meta property="og:description" content="Palestras e treinamentos in company sobre comportamento humano aplicado a resultado.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 <style>
 /* ============================================================
    ANA VELOSO, pagina institucional
-   Sistema visual: os quatro humores da teoria clássica,
+   Sistema visual: os 4 humores da teoria clássica,
    traduzidos em elemento, glifo alquímico e cor.
    Fogo · Ar · Terra · Água
    Tipografia: Plus Jakarta Sans (display, títulos)
@@ -31,22 +31,22 @@
   --line:rgba(244,240,231,.16);
   --line-dark:rgba(12,19,23,.14);
 
-  /* os quatro humores: cor viva */
-  --bile:#E7972E;      /* colérico · fogo · quente + seco */
-  --sangue:#DB625A;    /* sanguíneo · ar · quente + úmido */
-  --atra:#8583DA;      /* melancólico · terra · frio + seco */
-  --fleuma:#4FB397;    /* fleumático · água · frio + úmido */
+  /* os 4 humores: cor viva */
+  --bile:#DB625A;      /* colérico · vermelho */
+  --sangue:#E6B93C;    /* sanguíneo · amarelo */
+  --atra:#4F7FDB;      /* melancólico · azul */
+  --fleuma:#4FB397;    /* fleumático · verde */
 
   /* os mesmos humores, em profundidade (fundos tintados) */
-  --bile-deep:#34210A;
-  --sangue-deep:#361310;
-  --atra-deep:#1F1E42;
+  --bile-deep:#361310;
+  --sangue-deep:#332405;
+  --atra-deep:#101A33;
   --fleuma-deep:#0B2B26;
 
   /* versões escuras para texto sobre fundo claro */
-  --bile-ink:#8F5A12;
-  --sangue-ink:#9A3A33;
-  --atra-ink:#4B49A0;
+  --bile-ink:#9A3A33;
+  --sangue-ink:#8A6415;
+  --atra-ink:#3556A0;
   --fleuma-ink:#20705B;
 
   --txt-dark:#0C1317;
@@ -79,7 +79,8 @@ h1,h2,h3,.brand__name,.cell__name,.dossier__name,.diag__punch p,.dossier__quote,
   font-family:var(--display);
   font-weight:700;
 }
-h1{font-size:clamp(38px,5.2vw,64px);line-height:1.14;letter-spacing:-.015em;margin-bottom:26px;text-wrap:balance}
+h1{font-size:clamp(32px,5.2vw,64px);line-height:1.16;letter-spacing:-.012em;margin-bottom:26px;text-wrap:balance}
+@media(max-width:560px){h1{font-size:30px;line-height:1.2}}
 h2{font-size:clamp(31px,4.3vw,51px);line-height:1.08;letter-spacing:-.022em;margin-bottom:20px;text-wrap:balance}
 h3{font-size:24px;line-height:1.16;letter-spacing:-.015em;margin-bottom:10px}
 p{text-wrap:pretty}
@@ -88,13 +89,13 @@ p{text-wrap:pretty}
 strong{font-weight:600}
 .eyebrow{
   font-family:var(--mono);font-size:11px;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--bile);
+  text-transform:uppercase;color:var(--sangue);
   display:flex;align-items:center;gap:12px;margin-bottom:22px;
 }
 .eyebrow::before{content:"";width:26px;height:1px;background:currentColor;flex:none}
 .section{padding:106px 0;position:relative}
 .section--light{background:var(--cal);color:var(--txt-dark)}
-.section--light .eyebrow{color:var(--bile-ink)}
+.section--light .eyebrow{color:var(--sangue-ink)}
 
 /* ---------- glifos alquímicos ---------- */
 .glyph{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.3;flex:none}
@@ -116,14 +117,14 @@ strong{font-weight:600}
   padding:17px 30px;border:1px solid transparent;border-radius:2px;
   text-decoration:none;cursor:pointer;transition:transform .18s ease,background .18s ease;
 }
-.btn--primary{background:var(--bile);color:#000;border-color:var(--bile);font-weight:700}
-.btn--primary:hover{transform:translateY(-2px);background:#F0A63F}
+.btn--primary{background:var(--sangue);color:#000;border-color:var(--sangue);font-weight:700}
+.btn--primary:hover{transform:translateY(-2px);background:#EFC65A}
 .btn--ghost{background:transparent;color:var(--txt-light);border-color:var(--line)}
 .btn--ghost:hover{border-color:var(--txt-light);transform:translateY(-2px)}
 .section--light .btn--ghost{color:var(--txt-dark);border-color:var(--line-dark)}
 .section--light .btn--ghost:hover{border-color:var(--txt-dark)}
 .btn--wide{width:100%}
-:focus-visible{outline:2px solid var(--bile);outline-offset:3px}
+:focus-visible{outline:2px solid var(--sangue);outline-offset:3px}
 
 /* ---------- barra fixa mobile ---------- */
 .mcta{
@@ -133,15 +134,9 @@ strong{font-weight:600}
   transform:translateY(140%);transition:transform .35s ease;
 }
 .mcta.show{transform:none}
-.mcta__wpp{
-  flex:none;width:52px;display:flex;align-items:center;justify-content:center;
-  background:var(--ink-2);border:1px solid var(--line);border-radius:3px;color:var(--fleuma);
-  box-shadow:0 8px 24px rgba(0,0,0,.35);
-}
-.mcta__wpp svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.5}
 .mcta__btn{
   flex:1;display:flex;align-items:center;justify-content:center;
-  background:var(--bile);color:#000;font-weight:700;font-size:14.5px;
+  background:var(--sangue);color:#000;font-weight:700;font-size:14.5px;
   border-radius:3px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
 @media(max-width:940px){.mcta{display:flex}}
@@ -172,9 +167,9 @@ strong{font-weight:600}
 .hero::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(680px 400px at 72% 6%,  rgba(231,151,46,.20), transparent 64%),
-    radial-gradient(560px 420px at 96% 52%, rgba(219,98,90,.16),  transparent 66%),
-    radial-gradient(620px 480px at 2% 88%,  rgba(133,131,218,.15), transparent 66%),
+    radial-gradient(680px 400px at 72% 6%,  rgba(230,185,60,.22), transparent 64%),
+    radial-gradient(560px 420px at 96% 52%, rgba(219,98,90,.14),  transparent 66%),
+    radial-gradient(620px 480px at 2% 88%,  rgba(79,127,219,.15), transparent 66%),
     radial-gradient(700px 460px at 34% 104%,rgba(79,179,151,.14),  transparent 64%);
 }
 .hero__rule{display:flex;height:3px;margin-bottom:30px;max-width:360px}
@@ -184,27 +179,24 @@ strong{font-weight:600}
 .hero__rule i:nth-child(3){background:var(--atra)}
 .hero__rule i:nth-child(4){background:var(--fleuma)}
 .hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:64px;align-items:start}
-.hero h1 .mark{font-style:italic;color:var(--bile)}
+.hero h1 .mark{font-style:italic;color:var(--sangue)}
 .hero__sub{font-size:19.5px;line-height:1.58;color:var(--txt-light-mute);max-width:52ch;margin-bottom:34px}
 .hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
 .hero__note{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--txt-light-mute)}
 
 .portrait{position:relative}
 .portrait__frame{position:relative;border:1px solid var(--line);padding:14px}
-.portrait__frame img{width:100%;height:520px;object-fit:cover;object-position:center 18%;filter:grayscale(.3) contrast(1.05)}
-.portrait__frame::before,.portrait__frame::after{content:"";position:absolute;background:var(--line)}
-.portrait__frame::before{left:14px;right:14px;top:50%;height:1px}
-.portrait__frame::after{top:14px;bottom:14px;left:50%;width:1px}
+.portrait__frame img{width:100%;height:520px;object-fit:cover;object-position:center 12%;filter:grayscale(.3) contrast(1.05)}
 .ptag{
   position:absolute;display:flex;align-items:center;gap:7px;
   font-family:var(--mono);font-size:10px;letter-spacing:.18em;
   text-transform:uppercase;background:var(--ink);padding:5px 9px;
 }
 .ptag .glyph{width:14px;height:14px}
-.ptag--a{top:-12px;left:22px;color:var(--bile)}
-.ptag--b{top:-12px;right:22px;color:var(--sangue)}
-.ptag--c{bottom:-12px;left:22px;color:var(--atra)}
-.ptag--d{bottom:-12px;right:22px;color:var(--fleuma)}
+.ptag--a{top:-12px;left:22px;color:var(--sangue)}
+.ptag--b{top:-12px;right:22px;color:var(--bile)}
+.ptag--c{bottom:-12px;left:22px;color:var(--fleuma)}
+.ptag--d{bottom:-12px;right:22px;color:var(--atra)}
 @media(max-width:960px){
   .hero{padding:118px 0 58px}
   .hero__grid{grid-template-columns:1fr;gap:46px}
@@ -333,8 +325,8 @@ strong{font-weight:600}
 .cell.is-on .cell__tex{opacity:.34}
 .cell.is-on::after{width:calc(100% - 44px)}
 
-.dossier{position:relative;border-left:3px solid var(--c,var(--bile));padding:26px 26px 30px 30px;min-height:430px;overflow:hidden;
-  background:linear-gradient(150deg,var(--tint,rgba(231,151,46,.13)),transparent 62%)}
+.dossier{position:relative;border-left:3px solid var(--c,var(--bile));padding:26px 26px 30px 30px;min-height:300px;overflow:hidden;
+  background:linear-gradient(150deg,var(--tint,rgba(219,98,90,.13)),transparent 62%)}
 .dossier__wm{position:absolute;right:-24px;top:-10px;width:190px;height:260px;color:var(--c);opacity:.13;pointer-events:none}
 .dossier__head{display:flex;align-items:center;gap:11px;color:var(--c);margin-bottom:14px}
 .dossier__el{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
@@ -391,7 +383,7 @@ strong{font-weight:600}
   color:#1A1105;padding:64px 0;position:relative;overflow:hidden;
 }
 .band::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(60% 140% at 88% 120%, rgba(133,131,218,.42), transparent 62%)}
+  background:radial-gradient(60% 140% at 88% 120%, rgba(79,127,219,.42), transparent 62%)}
 .band__in{position:relative;z-index:2;display:grid;grid-template-columns:1.5fr .8fr;gap:48px;align-items:center}
 .band__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
   margin-bottom:14px;opacity:.72}
@@ -452,7 +444,7 @@ strong{font-weight:600}
 /* ---------- formulário ---------- */
 .form-sec{border-top:1px solid var(--line);position:relative;
   background:
-    radial-gradient(700px 420px at 8% 0%, rgba(231,151,46,.16), transparent 62%),
+    radial-gradient(700px 420px at 8% 0%, rgba(219,98,90,.16), transparent 62%),
     radial-gradient(640px 460px at 92% 100%, rgba(79,179,151,.14), transparent 64%),
     var(--ink-2)}
 .form-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
@@ -517,13 +509,10 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 
 <!-- barra fixa de ação (mobile) -->
 <div class="mcta" id="mCta">
-  <a class="mcta__wpp" id="mCtaWpp" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp com a Ana">
-    <svg viewBox="0 0 24 24"><path d="M4 20l1.4-4.2A8 8 0 1 1 9 18.6Z"/><path d="M9 10.5c0 3 2.5 5.5 5.5 5.5"/></svg>
-  </a>
   <a class="mcta__btn" href="#contato">Quero minha proposta</a>
 </div>
 
-<!-- glifos alquímicos dos quatro elementos -->
+<!-- glifos alquímicos dos 4 elementos -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="g-fogo" viewBox="0 0 24 24"><path d="M12 3.2 22 20.8H2Z" stroke-linejoin="round"/></symbol>
   <symbol id="g-ar" viewBox="0 0 24 24"><path d="M12 3.2 22 20.8H2Z" stroke-linejoin="round"/><path d="M6.4 15h11.2"/></symbol>
@@ -551,22 +540,18 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 <section class="hero" id="topo">
   <div class="wrap hero__grid">
     <div>
-      <div class="eyebrow">Palestras · Workshops · Treinamento in-company</div>
+      <div class="eyebrow">Palestras · Workshops · Treinamento in company</div>
       <div class="hero__rule" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <h1>Sua empresa não tem um problema técnico. Tem <span class="mark">quatro temperamentos</span> que ninguém aprendeu a gerenciar.</h1>
-      <p class="hero__sub">Ana Veloso é treinadora comportamental e especialista na ciência dos 4 temperamentos aplicada ao mercado de trabalho. Ela ensina empresários e líderes a ler pessoas com precisão, transformando isso em produtividade, retenção e decisão mais rápida.</p>
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="#contato">Quero essa palestra na minha empresa</a>
-      </div>
+      <h1>Sua empresa tem um problema! Tem <span class="mark">4 temperamentos</span> que ninguém aprendeu a gerenciar.</h1>
     </div>
 
     <div class="portrait">
       <div class="portrait__frame">
-        <span class="ptag ptag--a"><svg class="glyph"><use href="#g-fogo"/></svg>Colérico</span>
-        <span class="ptag ptag--b"><svg class="glyph"><use href="#g-ar"/></svg>Sanguíneo</span>
-        <span class="ptag ptag--c"><svg class="glyph"><use href="#g-terra"/></svg>Melancólico</span>
-        <span class="ptag ptag--d"><svg class="glyph"><use href="#g-agua"/></svg>Fleumático</span>
-        <img src="https://souanaveloso.com.br/wp-content/uploads/2025/08/3B4A7041-683x1024.jpg" alt="Ana Veloso, treinadora comportamental">
+        <span class="ptag ptag--a"><svg class="glyph"><use href="#g-ar"/></svg>Sanguíneo</span>
+        <span class="ptag ptag--b"><svg class="glyph"><use href="#g-fogo"/></svg>Colérico</span>
+        <span class="ptag ptag--c"><svg class="glyph"><use href="#g-agua"/></svg>Fleumático</span>
+        <span class="ptag ptag--d"><svg class="glyph"><use href="#g-terra"/></svg>Melancólico</span>
+        <img src="ana-veloso-foto-hero.png" alt="Ana Veloso, treinadora comportamental">
       </div>
     </div>
   </div>
@@ -628,8 +613,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 <section class="elements" id="temperamentos">
   <div class="wrap rv">
     <div class="eyebrow">Fogo · Ar · Terra · Água</div>
-    <h2>Quatro modos de funcionar. Todo time tem os quatro.</h2>
-    <p class="lead">A teoria dos temperamentos nasceu associada aos quatro elementos, e a imagem continua exata: dentro de uma empresa, cada perfil se move como o elemento que o representa. Um empurra, um espalha, um sustenta, um estabiliza.</p>
+    <h2>4 modos de funcionar. Todo time tem os 4.</h2>
+    <p class="lead">A teoria dos temperamentos nasceu associada aos 4 elementos, e a imagem continua exata: dentro de uma empresa, cada perfil se move como o elemento que o representa. Um empurra, um espalha, um sustenta, um estabiliza.</p>
     <div class="elhint" id="elHint">
       <span>Deslize para o lado</span>
       <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
@@ -637,21 +622,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
   </div>
 
   <div class="elstrip rv" id="elStrip">
-    <article class="elcard" style="--c:var(--bile);--deep:var(--bile-deep);--glow:rgba(231,151,46,.30)">
-      <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M22 410 L160 292 L298 410" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.85"/><path d="M39 366 L160 248 L281 366" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.75"/><path d="M56 322 L160 204 L264 322" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.65"/><path d="M73 278 L160 160 L247 278" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/><path d="M90 234 L160 116 L230 234" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><path d="M107 190 L160 72 L213 190" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.35"/><path d="M124 146 L160 28 L196 146" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.25"/><line x1="30" y1="430" x2="30" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="56" y1="430" x2="56" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="82" y1="430" x2="82" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="108" y1="430" x2="108" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="134" y1="430" x2="134" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="160" y1="430" x2="160" y2="404" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="186" y1="430" x2="186" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="212" y1="430" x2="212" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="238" y1="430" x2="238" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="264" y1="430" x2="264" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="290" y1="430" x2="290" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/></svg></div>
-      <div class="elcard__scrim"></div>
-      <div class="elcard__body">
-        <div class="elcard__head">
-          <svg class="glyph glyph--lg"><use href="#g-fogo"/></svg>
-          <span class="elcard__el">Fogo · quente + seco</span>
-        </div>
-        <h3>Colérico</h3>
-        <div class="elcard__verb">Empurra</div>
-        <p>Decide em segundos e cobra em minutos. Sua empresa avança por causa dele e perde gente pelo mesmo motivo.</p>
-      </div>
-    </article>
-
-    <article class="elcard" style="--c:var(--sangue);--deep:var(--sangue-deep);--glow:rgba(219,98,90,.30)">
+    <article class="elcard" style="--c:var(--sangue);--deep:var(--sangue-deep);--glow:rgba(230,185,60,.30)">
       <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-20 90 C 70 64, 180 116, 340 77" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.8"/><path d="M-20 144 C 70 121, 180 167, 340 133" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.71"/><path d="M-20 198 C 70 178, 180 218, 340 188" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.62"/><path d="M-20 252 C 70 235, 180 269, 340 244" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.53"/><path d="M-20 306 C 70 292, 180 320, 340 299" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.44"/><path d="M-20 360 C 70 349, 180 371, 340 355" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.35"/><circle cx="109" cy="104" r="1.2" fill="currentColor" opacity="0.21"/><circle cx="170" cy="182" r="1.2" fill="currentColor" opacity="0.52"/><circle cx="77" cy="81" r="2.8" fill="currentColor" opacity="0.21"/><circle cx="40" cy="203" r="1.2" fill="currentColor" opacity="0.53"/><circle cx="198" cy="260" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="130" cy="401" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="53" cy="201" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="178" cy="296" r="1.2" fill="currentColor" opacity="0.40"/><circle cx="201" cy="184" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="195" cy="229" r="2.8" fill="currentColor" opacity="0.47"/><circle cx="150" cy="382" r="2.2" fill="currentColor" opacity="0.29"/><circle cx="246" cy="302" r="1.6" fill="currentColor" opacity="0.21"/><circle cx="102" cy="228" r="2.2" fill="currentColor" opacity="0.45"/><circle cx="98" cy="403" r="1.2" fill="currentColor" opacity="0.37"/><circle cx="62" cy="173" r="2.8" fill="currentColor" opacity="0.34"/><circle cx="295" cy="78" r="2.2" fill="currentColor" opacity="0.31"/><circle cx="116" cy="229" r="2.8" fill="currentColor" opacity="0.21"/><circle cx="41" cy="147" r="1.2" fill="currentColor" opacity="0.20"/><circle cx="219" cy="283" r="2.8" fill="currentColor" opacity="0.29"/><circle cx="127" cy="291" r="1.2" fill="currentColor" opacity="0.53"/><circle cx="118" cy="270" r="2.8" fill="currentColor" opacity="0.20"/><circle cx="238" cy="97" r="1.6" fill="currentColor" opacity="0.33"/><circle cx="282" cy="229" r="1.6" fill="currentColor" opacity="0.35"/><circle cx="174" cy="368" r="2.8" fill="currentColor" opacity="0.50"/><circle cx="95" cy="200" r="2.2" fill="currentColor" opacity="0.43"/><circle cx="125" cy="133" r="1.2" fill="currentColor" opacity="0.25"/><circle cx="82" cy="134" r="2.8" fill="currentColor" opacity="0.49"/><circle cx="67" cy="151" r="1.6" fill="currentColor" opacity="0.34"/><circle cx="122" cy="254" r="1.6" fill="currentColor" opacity="0.44"/><circle cx="165" cy="272" r="1.2" fill="currentColor" opacity="0.35"/><circle cx="268" cy="393" r="2.8" fill="currentColor" opacity="0.33"/><circle cx="129" cy="223" r="2.8" fill="currentColor" opacity="0.20"/><circle cx="34" cy="125" r="1.6" fill="currentColor" opacity="0.22"/><circle cx="189" cy="87" r="1.6" fill="currentColor" opacity="0.38"/><circle cx="291" cy="271" r="1.2" fill="currentColor" opacity="0.50"/><circle cx="193" cy="103" r="2.2" fill="currentColor" opacity="0.53"/><circle cx="190" cy="221" r="1.2" fill="currentColor" opacity="0.49"/><circle cx="304" cy="218" r="2.8" fill="currentColor" opacity="0.30"/><circle cx="56" cy="320" r="2.2" fill="currentColor" opacity="0.36"/><circle cx="216" cy="236" r="1.6" fill="currentColor" opacity="0.53"/><circle cx="168" cy="103" r="1.2" fill="currentColor" opacity="0.46"/><circle cx="101" cy="281" r="1.2" fill="currentColor" opacity="0.44"/><circle cx="90" cy="182" r="1.6" fill="currentColor" opacity="0.31"/><circle cx="79" cy="245" r="2.2" fill="currentColor" opacity="0.42"/><circle cx="193" cy="334" r="1.6" fill="currentColor" opacity="0.48"/><circle cx="253" cy="316" r="1.6" fill="currentColor" opacity="0.25"/></svg></div>
       <div class="elcard__scrim"></div>
       <div class="elcard__body">
@@ -665,17 +636,17 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       </div>
     </article>
 
-    <article class="elcard" style="--c:var(--atra);--deep:var(--atra-deep);--glow:rgba(133,131,218,.30)">
-      <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><line x1="20" y1="40" x2="20" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="43" y1="40" x2="43" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="67" y1="40" x2="67" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="90" y1="40" x2="90" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="113" y1="40" x2="113" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="136" y1="40" x2="136" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="160" y1="40" x2="160" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="183" y1="40" x2="183" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="206" y1="40" x2="206" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="230" y1="40" x2="230" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="253" y1="40" x2="253" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="276" y1="40" x2="276" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="300" y1="40" x2="300" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="40" x2="300" y2="40" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="71" x2="300" y2="71" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="102" x2="300" y2="102" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="133" x2="300" y2="133" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="164" x2="300" y2="164" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="195" x2="300" y2="195" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><rect x="20" y="214" width="280" height="7" fill="currentColor" opacity="0.24"/><rect x="20" y="227" width="280" height="13" fill="currentColor" opacity="0.29"/><rect x="20" y="246" width="280" height="5" fill="currentColor" opacity="0.35"/><rect x="20" y="257" width="280" height="20" fill="currentColor" opacity="0.41"/><rect x="20" y="283" width="280" height="9" fill="currentColor" opacity="0.46"/><rect x="20" y="298" width="280" height="16" fill="currentColor" opacity="0.52"/><rect x="20" y="320" width="280" height="6" fill="currentColor" opacity="0.57"/><rect x="20" y="332" width="280" height="26" fill="currentColor" opacity="0.62"/><rect x="20" y="364" width="280" height="11" fill="currentColor" opacity="0.68"/><rect x="20" y="381" width="280" height="19" fill="currentColor" opacity="0.73"/></svg></div>
+    <article class="elcard" style="--c:var(--bile);--deep:var(--bile-deep);--glow:rgba(219,98,90,.30)">
+      <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M22 410 L160 292 L298 410" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.85"/><path d="M39 366 L160 248 L281 366" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.75"/><path d="M56 322 L160 204 L264 322" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.65"/><path d="M73 278 L160 160 L247 278" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/><path d="M90 234 L160 116 L230 234" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><path d="M107 190 L160 72 L213 190" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.35"/><path d="M124 146 L160 28 L196 146" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.25"/><line x1="30" y1="430" x2="30" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="56" y1="430" x2="56" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="82" y1="430" x2="82" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="108" y1="430" x2="108" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="134" y1="430" x2="134" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="160" y1="430" x2="160" y2="404" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="186" y1="430" x2="186" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="212" y1="430" x2="212" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="238" y1="430" x2="238" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="264" y1="430" x2="264" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="290" y1="430" x2="290" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/></svg></div>
       <div class="elcard__scrim"></div>
       <div class="elcard__body">
         <div class="elcard__head">
-          <svg class="glyph glyph--lg"><use href="#g-terra"/></svg>
-          <span class="elcard__el">Terra · frio + seco</span>
+          <svg class="glyph glyph--lg"><use href="#g-fogo"/></svg>
+          <span class="elcard__el">Fogo · quente + seco</span>
         </div>
-        <h3>Melancólico</h3>
-        <div class="elcard__verb">Sustenta</div>
-        <p>Enxerga o erro antes de ele acontecer. É o padrão de qualidade da casa, e trava na busca do impecável.</p>
+        <h3>Colérico</h3>
+        <div class="elcard__verb">Empurra</div>
+        <p>Decide em segundos e cobra em minutos. Sua empresa avança por causa dele e perde gente pelo mesmo motivo.</p>
       </div>
     </article>
 
@@ -692,6 +663,20 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
         <p>Aguenta a rotina que os outros três largam. E some exatamente quando precisaria se impor.</p>
       </div>
     </article>
+
+    <article class="elcard" style="--c:var(--atra);--deep:var(--atra-deep);--glow:rgba(79,127,219,.30)">
+      <div class="elcard__art"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><line x1="20" y1="40" x2="20" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="43" y1="40" x2="43" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="67" y1="40" x2="67" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="90" y1="40" x2="90" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="113" y1="40" x2="113" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="136" y1="40" x2="136" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="160" y1="40" x2="160" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="183" y1="40" x2="183" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="206" y1="40" x2="206" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="230" y1="40" x2="230" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="253" y1="40" x2="253" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="276" y1="40" x2="276" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="300" y1="40" x2="300" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="40" x2="300" y2="40" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="71" x2="300" y2="71" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="102" x2="300" y2="102" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="133" x2="300" y2="133" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="164" x2="300" y2="164" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="195" x2="300" y2="195" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><rect x="20" y="214" width="280" height="7" fill="currentColor" opacity="0.24"/><rect x="20" y="227" width="280" height="13" fill="currentColor" opacity="0.29"/><rect x="20" y="246" width="280" height="5" fill="currentColor" opacity="0.35"/><rect x="20" y="257" width="280" height="20" fill="currentColor" opacity="0.41"/><rect x="20" y="283" width="280" height="9" fill="currentColor" opacity="0.46"/><rect x="20" y="298" width="280" height="16" fill="currentColor" opacity="0.52"/><rect x="20" y="320" width="280" height="6" fill="currentColor" opacity="0.57"/><rect x="20" y="332" width="280" height="26" fill="currentColor" opacity="0.62"/><rect x="20" y="364" width="280" height="11" fill="currentColor" opacity="0.68"/><rect x="20" y="381" width="280" height="19" fill="currentColor" opacity="0.73"/></svg></div>
+      <div class="elcard__scrim"></div>
+      <div class="elcard__body">
+        <div class="elcard__head">
+          <svg class="glyph glyph--lg"><use href="#g-terra"/></svg>
+          <span class="elcard__el">Terra · frio + seco</span>
+        </div>
+        <h3>Melancólico</h3>
+        <div class="elcard__verb">Sustenta</div>
+        <p>Enxerga o erro antes de ele acontecer. É o padrão de qualidade da casa, e trava na busca do impecável.</p>
+      </div>
+    </article>
   </div>
   <div class="eldots" id="elDots" aria-hidden="true">
     <button class="eldot is-on" data-i="0"></button>
@@ -704,9 +689,9 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 <!-- ====================== QUADRANTE ====================== -->
 <section class="section" id="quadrante">
   <div class="wrap rv">
-    <div class="eyebrow">O quadrante</div>
-    <h2>O mesmo mapa, agora como ferramenta de gestão.</h2>
-    <p class="lead">Dois eixos (quente ou frio, seco ou úmido) cruzados em quatro combinações. Cada pessoa tem <strong>um</strong> temperamento, não uma mistura de percentuais. Toque em cada quadrante e veja o dossiê operacional do perfil.</p>
+    <div class="eyebrow">Seu time é assim</div>
+    <h2>Observe agora: sua equipe, sua empresa, é formada por qual tipo de profissional?</h2>
+    <p class="lead">Dois eixos (quente ou frio, seco ou úmido) cruzados em 4 combinações. Cada pessoa tem <strong>um</strong> temperamento, não uma mistura de percentuais. Toque em cada quadrante e veja o defeito de cada perfil, e o que ele já deve estar custando para a sua empresa.</p>
 
     <div class="quad">
       <div class="quad__stage">
@@ -715,30 +700,75 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
         <span class="axis axis--left">Seco</span>
         <span class="axis axis--right">Úmido</span>
         <div class="quad__grid" id="quadGrid">
-          <button class="cell is-on" data-t="colerico" aria-pressed="true">
-            <span class="cell__tex"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M22 410 L160 292 L298 410" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.85"/><path d="M39 366 L160 248 L281 366" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.75"/><path d="M56 322 L160 204 L264 322" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.65"/><path d="M73 278 L160 160 L247 278" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/><path d="M90 234 L160 116 L230 234" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><path d="M107 190 L160 72 L213 190" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.35"/><path d="M124 146 L160 28 L196 146" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.25"/><line x1="30" y1="430" x2="30" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="56" y1="430" x2="56" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="82" y1="430" x2="82" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="108" y1="430" x2="108" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="134" y1="430" x2="134" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="160" y1="430" x2="160" y2="404" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="186" y1="430" x2="186" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="212" y1="430" x2="212" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="238" y1="430" x2="238" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="264" y1="430" x2="264" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="290" y1="430" x2="290" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/></svg></span>
-            <span class="cell__top"><svg class="glyph"><use href="#g-fogo"/></svg><span class="cell__el">Fogo</span></span>
-            <span class="cell__foot"><span class="cell__name">Colérico</span><span class="cell__role">o motor</span></span>
-          </button>
           <button class="cell" data-t="sanguineo" aria-pressed="false">
             <span class="cell__tex"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-20 90 C 70 64, 180 116, 340 77" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.8"/><path d="M-20 144 C 70 121, 180 167, 340 133" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.71"/><path d="M-20 198 C 70 178, 180 218, 340 188" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.62"/><path d="M-20 252 C 70 235, 180 269, 340 244" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.53"/><path d="M-20 306 C 70 292, 180 320, 340 299" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.44"/><path d="M-20 360 C 70 349, 180 371, 340 355" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.35"/><circle cx="109" cy="104" r="1.2" fill="currentColor" opacity="0.21"/><circle cx="170" cy="182" r="1.2" fill="currentColor" opacity="0.52"/><circle cx="77" cy="81" r="2.8" fill="currentColor" opacity="0.21"/><circle cx="40" cy="203" r="1.2" fill="currentColor" opacity="0.53"/><circle cx="198" cy="260" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="130" cy="401" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="53" cy="201" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="178" cy="296" r="1.2" fill="currentColor" opacity="0.40"/><circle cx="201" cy="184" r="1.2" fill="currentColor" opacity="0.39"/><circle cx="195" cy="229" r="2.8" fill="currentColor" opacity="0.47"/><circle cx="150" cy="382" r="2.2" fill="currentColor" opacity="0.29"/><circle cx="246" cy="302" r="1.6" fill="currentColor" opacity="0.21"/><circle cx="102" cy="228" r="2.2" fill="currentColor" opacity="0.45"/><circle cx="98" cy="403" r="1.2" fill="currentColor" opacity="0.37"/><circle cx="62" cy="173" r="2.8" fill="currentColor" opacity="0.34"/><circle cx="295" cy="78" r="2.2" fill="currentColor" opacity="0.31"/><circle cx="116" cy="229" r="2.8" fill="currentColor" opacity="0.21"/><circle cx="41" cy="147" r="1.2" fill="currentColor" opacity="0.20"/><circle cx="219" cy="283" r="2.8" fill="currentColor" opacity="0.29"/><circle cx="127" cy="291" r="1.2" fill="currentColor" opacity="0.53"/><circle cx="118" cy="270" r="2.8" fill="currentColor" opacity="0.20"/><circle cx="238" cy="97" r="1.6" fill="currentColor" opacity="0.33"/><circle cx="282" cy="229" r="1.6" fill="currentColor" opacity="0.35"/><circle cx="174" cy="368" r="2.8" fill="currentColor" opacity="0.50"/><circle cx="95" cy="200" r="2.2" fill="currentColor" opacity="0.43"/><circle cx="125" cy="133" r="1.2" fill="currentColor" opacity="0.25"/><circle cx="82" cy="134" r="2.8" fill="currentColor" opacity="0.49"/><circle cx="67" cy="151" r="1.6" fill="currentColor" opacity="0.34"/><circle cx="122" cy="254" r="1.6" fill="currentColor" opacity="0.44"/><circle cx="165" cy="272" r="1.2" fill="currentColor" opacity="0.35"/><circle cx="268" cy="393" r="2.8" fill="currentColor" opacity="0.33"/><circle cx="129" cy="223" r="2.8" fill="currentColor" opacity="0.20"/><circle cx="34" cy="125" r="1.6" fill="currentColor" opacity="0.22"/><circle cx="189" cy="87" r="1.6" fill="currentColor" opacity="0.38"/><circle cx="291" cy="271" r="1.2" fill="currentColor" opacity="0.50"/><circle cx="193" cy="103" r="2.2" fill="currentColor" opacity="0.53"/><circle cx="190" cy="221" r="1.2" fill="currentColor" opacity="0.49"/><circle cx="304" cy="218" r="2.8" fill="currentColor" opacity="0.30"/><circle cx="56" cy="320" r="2.2" fill="currentColor" opacity="0.36"/><circle cx="216" cy="236" r="1.6" fill="currentColor" opacity="0.53"/><circle cx="168" cy="103" r="1.2" fill="currentColor" opacity="0.46"/><circle cx="101" cy="281" r="1.2" fill="currentColor" opacity="0.44"/><circle cx="90" cy="182" r="1.6" fill="currentColor" opacity="0.31"/><circle cx="79" cy="245" r="2.2" fill="currentColor" opacity="0.42"/><circle cx="193" cy="334" r="1.6" fill="currentColor" opacity="0.48"/><circle cx="253" cy="316" r="1.6" fill="currentColor" opacity="0.25"/></svg></span>
             <span class="cell__top"><svg class="glyph"><use href="#g-ar"/></svg><span class="cell__el">Ar</span></span>
             <span class="cell__foot"><span class="cell__name">Sanguíneo</span><span class="cell__role">a ponte</span></span>
           </button>
-          <button class="cell" data-t="melancolico" aria-pressed="false">
-            <span class="cell__tex"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><line x1="20" y1="40" x2="20" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="43" y1="40" x2="43" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="67" y1="40" x2="67" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="90" y1="40" x2="90" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="113" y1="40" x2="113" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="136" y1="40" x2="136" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="160" y1="40" x2="160" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="183" y1="40" x2="183" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="206" y1="40" x2="206" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="230" y1="40" x2="230" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="253" y1="40" x2="253" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="276" y1="40" x2="276" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="300" y1="40" x2="300" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="40" x2="300" y2="40" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="71" x2="300" y2="71" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="102" x2="300" y2="102" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="133" x2="300" y2="133" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="164" x2="300" y2="164" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="195" x2="300" y2="195" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><rect x="20" y="214" width="280" height="7" fill="currentColor" opacity="0.24"/><rect x="20" y="227" width="280" height="13" fill="currentColor" opacity="0.29"/><rect x="20" y="246" width="280" height="5" fill="currentColor" opacity="0.35"/><rect x="20" y="257" width="280" height="20" fill="currentColor" opacity="0.41"/><rect x="20" y="283" width="280" height="9" fill="currentColor" opacity="0.46"/><rect x="20" y="298" width="280" height="16" fill="currentColor" opacity="0.52"/><rect x="20" y="320" width="280" height="6" fill="currentColor" opacity="0.57"/><rect x="20" y="332" width="280" height="26" fill="currentColor" opacity="0.62"/><rect x="20" y="364" width="280" height="11" fill="currentColor" opacity="0.68"/><rect x="20" y="381" width="280" height="19" fill="currentColor" opacity="0.73"/></svg></span>
-            <span class="cell__top"><svg class="glyph"><use href="#g-terra"/></svg><span class="cell__el">Terra</span></span>
-            <span class="cell__foot"><span class="cell__name">Melancólico</span><span class="cell__role">o padrão</span></span>
+          <button class="cell is-on" data-t="colerico" aria-pressed="true">
+            <span class="cell__tex"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M22 410 L160 292 L298 410" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.85"/><path d="M39 366 L160 248 L281 366" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.75"/><path d="M56 322 L160 204 L264 322" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.65"/><path d="M73 278 L160 160 L247 278" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/><path d="M90 234 L160 116 L230 234" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><path d="M107 190 L160 72 L213 190" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.35"/><path d="M124 146 L160 28 L196 146" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.25"/><line x1="30" y1="430" x2="30" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="56" y1="430" x2="56" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="82" y1="430" x2="82" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="108" y1="430" x2="108" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="134" y1="430" x2="134" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="160" y1="430" x2="160" y2="404" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="186" y1="430" x2="186" y2="395" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="212" y1="430" x2="212" y2="386" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="238" y1="430" x2="238" y2="377" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="264" y1="430" x2="264" y2="368" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="290" y1="430" x2="290" y2="359" stroke="currentColor" stroke-width="1" opacity="0.35"/></svg></span>
+            <span class="cell__top"><svg class="glyph"><use href="#g-fogo"/></svg><span class="cell__el">Fogo</span></span>
+            <span class="cell__foot"><span class="cell__name">Colérico</span><span class="cell__role">o motor</span></span>
           </button>
           <button class="cell" data-t="fleumatico" aria-pressed="false">
             <span class="cell__tex"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><ellipse cx="160" cy="432" rx="34" ry="20" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.85"/><ellipse cx="160" cy="432" rx="64" ry="39" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.77"/><ellipse cx="160" cy="432" rx="94" ry="58" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.68"/><ellipse cx="160" cy="432" rx="124" ry="77" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.59"/><ellipse cx="160" cy="432" rx="154" ry="96" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.51"/><ellipse cx="160" cy="432" rx="184" ry="115" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.42"/><ellipse cx="160" cy="432" rx="214" ry="134" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.34"/><ellipse cx="160" cy="432" rx="244" ry="153" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.25"/><ellipse cx="160" cy="432" rx="274" ry="172" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.17"/><path d="M160 62 C 196 112, 208 140, 208 160 A 48 48 0 1 1 112 160 C 112 140, 124 112, 160 62 Z" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.7"/></svg></span>
             <span class="cell__top"><svg class="glyph"><use href="#g-agua"/></svg><span class="cell__el">Água</span></span>
             <span class="cell__foot"><span class="cell__name">Fleumático</span><span class="cell__role">a base</span></span>
           </button>
+          <button class="cell" data-t="melancolico" aria-pressed="false">
+            <span class="cell__tex"><svg class="elart" viewBox="0 0 320 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><line x1="20" y1="40" x2="20" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="43" y1="40" x2="43" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="67" y1="40" x2="67" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="90" y1="40" x2="90" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="113" y1="40" x2="113" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="136" y1="40" x2="136" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="160" y1="40" x2="160" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="183" y1="40" x2="183" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="206" y1="40" x2="206" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="230" y1="40" x2="230" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="253" y1="40" x2="253" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="276" y1="40" x2="276" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="300" y1="40" x2="300" y2="196" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="40" x2="300" y2="40" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="71" x2="300" y2="71" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="102" x2="300" y2="102" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="133" x2="300" y2="133" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="164" x2="300" y2="164" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><line x1="20" y1="195" x2="300" y2="195" stroke="currentColor" stroke-width="0.8" opacity="0.22"/><rect x="20" y="214" width="280" height="7" fill="currentColor" opacity="0.24"/><rect x="20" y="227" width="280" height="13" fill="currentColor" opacity="0.29"/><rect x="20" y="246" width="280" height="5" fill="currentColor" opacity="0.35"/><rect x="20" y="257" width="280" height="20" fill="currentColor" opacity="0.41"/><rect x="20" y="283" width="280" height="9" fill="currentColor" opacity="0.46"/><rect x="20" y="298" width="280" height="16" fill="currentColor" opacity="0.52"/><rect x="20" y="320" width="280" height="6" fill="currentColor" opacity="0.57"/><rect x="20" y="332" width="280" height="26" fill="currentColor" opacity="0.62"/><rect x="20" y="364" width="280" height="11" fill="currentColor" opacity="0.68"/><rect x="20" y="381" width="280" height="19" fill="currentColor" opacity="0.73"/></svg></span>
+            <span class="cell__top"><svg class="glyph"><use href="#g-terra"/></svg><span class="cell__el">Terra</span></span>
+            <span class="cell__foot"><span class="cell__name">Melancólico</span><span class="cell__role">o padrão</span></span>
+          </button>
         </div>
       </div>
 
       <div class="dossier" id="dossier"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== O DIA A DIA REAL ====================== -->
+<section class="section section--light">
+  <div class="wrap diag rv">
+    <div>
+      <div class="eyebrow">Isso não é teoria</div>
+      <h2>Isso já aconteceu essa semana, na sua empresa.</h2>
+      <p class="lead">Agora que você conhece os 4 perfis, veja como eles colidem no dia a dia sem que ninguém perceba o motivo real.</p>
+      <div class="diag__punch">
+        <p>“Cada um desses casos tem uma causa clara. É esse o trabalho que a Ana faz dentro da empresa.”</p>
+      </div>
+    </div>
+
+    <div class="symptoms">
+      <div class="symptom">
+        <div class="symptom__n">01</div>
+        <div>
+          <div class="symptom__t">A reunião que decidiu tudo e não mudou nada</div>
+          <div class="symptom__d">O colérico decidiu na hora. O melancólico não teve tempo de validar. O fleumático concordou sem falar o que pensava. Na terça, ninguém executa o que foi decidido na segunda.</div>
+        </div>
+      </div>
+      <div class="symptom">
+        <div class="symptom__n">02</div>
+        <div>
+          <div class="symptom__t">O prazo que só existia na cabeça de quem prometeu</div>
+          <div class="symptom__d">O sanguíneo fechou com o cliente uma data empolgante. Quem ia executar descobriu depois. Quem correu atrás para não perder o cliente foi o melancólico, sozinho.</div>
+        </div>
+      </div>
+      <div class="symptom">
+        <div class="symptom__n">03</div>
+        <div>
+          <div class="symptom__t">Quem nunca reclamou de nada, até sair</div>
+          <div class="symptom__d">O fleumático aguentou tarefa em cima de tarefa sem levantar a mão. Quando pediu demissão, a liderança não viu vindo, porque ele nunca deu nenhum sinal.</div>
+        </div>
+      </div>
+      <div class="symptom">
+        <div class="symptom__n">04</div>
+        <div>
+          <div class="symptom__t">O colérico que virou o próprio gargalo</div>
+          <div class="symptom__d">Decide rápido, cobra rápido, e não delega porque acha que ninguém faz do jeito certo. O time aprende a esperar ele decidir tudo, e a empresa para de crescer no ritmo dele.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -760,10 +790,10 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
           <li><span>→</span>Resultado na tela assim que você termina, sem espera e sem cálculo</li>
           <li><span>→</span>PDF para baixar com o seu temperamento, pontos fortes e tendências de comportamento</li>
           <li><span>→</span>Tabela comparativa dos 4 temperamentos, para entender como lidar com cada perfil</li>
-          <li><span>→</span>Aula introdutória e quatro mini-aulas explicando os 4 temperamentos</li>
+          <li><span>→</span>Aula introdutória e 4 mini-aulas explicando os 4 temperamentos</li>
         </ul>
         <a class="btn btn--primary" href="https://www.omapadoseufuncionamento.com.br" target="_blank" rel="noopener">Saiba mais</a>
-        <p class="mapa__note">Produto individual, para uso pessoal. Diferente das palestras e treinamentos in-company desta página.</p>
+        <p class="mapa__note">Produto individual, para uso pessoal. Diferente das palestras e treinamentos in company desta página.</p>
       </div>
     </div>
   </div>
@@ -780,7 +810,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       <div class="format">
         <div class="format__k">Keynote</div>
         <h3>Palestra para eventos e convenções</h3>
-        <p class="format__d">A sessão que abre a cabeça da sala: por que a mesma ordem gera quatro reações diferentes, e o que fazer com isso na segunda-feira. Adaptada ao setor e ao público do evento.</p>
+        <p class="format__d">A sessão que abre a cabeça da sala: por que a mesma ordem gera 4 reações diferentes, e o que isso revela sobre a sua própria equipe. Adaptada ao setor e ao público do evento.</p>
         <div class="format__meta">60 a 90 min · presencial ou online · plateia sem limite</div>
       </div>
       <div class="format">
@@ -790,7 +820,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
         <div class="format__meta">4 horas · presencial · até 40 participantes</div>
       </div>
       <div class="format">
-        <div class="format__k">In-company</div>
+        <div class="format__k">In company</div>
         <h3>Jornada Método Origem para equipes</h3>
         <p class="format__d">Programa de 8 semanas aplicado ao time inteiro: temperamento sob pressão, redução de atrito, liderança e engajamento. Encontros online ao vivo com acesso gravado por 12 meses.</p>
         <div class="format__meta">8 semanas · turmas fechadas · certificado</div>
@@ -825,7 +855,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
   <div class="wrap band__in">
     <div>
       <div class="band__eyebrow">Próxima etapa</div>
-      <h2 class="band__h">Sua equipe já tem os quatro perfis. Falta alguém que saiba conduzi-los.</h2>
+      <h2 class="band__h">Sua equipe já tem os 4 perfis. Falta alguém que saiba conduzi-los.</h2>
     </div>
     <div class="band__act">
       <a class="btn btn--dark" href="#contato">Solicitar proposta</a>
@@ -839,7 +869,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
   <div class="wrap rv">
     <div class="eyebrow">Método Origem</div>
     <h2>Autoconhecimento vira resultado quando vira processo.</h2>
-    <p class="lead">A sequência que Ana aplica em empresas e em mentoria. Cada etapa depende da anterior; pular a primeira é o motivo pelo qual a maioria dos treinamentos comportamentais não sobrevive ao mês seguinte.</p>
+    <p class="lead">A sequência que Ana aplica em empresas e em mentoria. Não é mágica de palestra de 90 minutos: é processo, e cada etapa depende da anterior. Pular a primeira é o motivo pelo qual a maioria dos treinamentos comportamentais não sobrevive ao mês seguinte.</p>
 
     <div class="steps">
       <div class="step">
@@ -922,7 +952,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
     <div class="form-side">
       <div class="eyebrow">Agenda 2026</div>
       <h2>Leve os 4 temperamentos para dentro da sua empresa.</h2>
-      <p class="lead">Preencha e receba a proposta com formato, investimento e datas disponíveis. Se preferir, o envio abre direto no WhatsApp.</p>
+      <p class="lead">Preencha e receba a proposta com formato, investimento e datas disponíveis.</p>
       <ul>
         <li><span>01</span> Você conta o contexto e o objetivo do evento</li>
         <li><span>02</span> Ana devolve o formato recomendado e a proposta</li>
@@ -957,7 +987,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
           <select id="tipo" name="tipo">
             <option>Palestra em evento</option>
             <option>Workshop presencial</option>
-            <option>Treinamento in-company</option>
+            <option>Treinamento in company</option>
             <option>Diagnóstico de equipe</option>
             <option>Ainda não sei, quero orientação</option>
           </select>
@@ -994,7 +1024,11 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
     <div class="faq">
       <details open>
         <summary>Qual é a duração ideal da palestra?</summary>
-        <p>De 60 a 90 minutos para eventos e convenções, tempo suficiente para a plateia entender os quatro perfis, se reconhecer em um deles e sair com aplicação prática. Para times que precisam praticar, o formato indicado é o workshop de 4 horas.</p>
+        <p>De 60 a 90 minutos para eventos e convenções, tempo suficiente para a plateia reconhecer os 4 perfis em si mesma e no time, e entender que existe um caminho real para lidar com isso. Para times que precisam praticar, o formato indicado é o workshop de 4 horas.</p>
+      </details>
+      <details>
+        <summary>A palestra sozinha já resolve o problema?</summary>
+        <p>Não, e qualquer um que prometer isso em 90 minutos está vendendo ilusão. A palestra entrega o diagnóstico: sua equipe sai sabendo exatamente o que está acontecendo e por quê. Aplicar essa leitura no dia a dia e sustentar a mudança é um trabalho contínuo, por isso existem os formatos de workshop, in company e diagnóstico de equipe.</p>
       </details>
       <details>
         <summary>O conteúdo é adaptado ao meu setor?</summary>
@@ -1002,7 +1036,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       </details>
       <details>
         <summary>Funciona online?</summary>
-        <p>Funciona. Keynotes e a jornada in-company de 8 semanas são entregues online ao vivo, com gravação disponível para a equipe. O workshop prático é o único formato que rende mais no presencial, pelas dinâmicas em grupo.</p>
+        <p>Funciona. Keynotes e a jornada in company de 8 semanas são entregues online ao vivo, com gravação disponível para a equipe. O workshop prático é o único formato que rende mais no presencial, pelas dinâmicas em grupo.</p>
       </details>
       <details>
         <summary>Como funciona o investimento?</summary>
@@ -1010,7 +1044,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       </details>
       <details>
         <summary>A equipe recebe algum material depois?</summary>
-        <p>Sim. Todo formato inclui material de apoio com o mapa dos quatro temperamentos e o guia prático de comunicação entre perfis. Nos formatos de diagnóstico e in-company, cada participante recebe também o próprio relatório individual.</p>
+        <p>Sim. Todo formato inclui material de apoio com o mapa dos 4 temperamentos e o guia prático de comunicação entre perfis. Nos formatos de diagnóstico e in company, cada participante recebe também o próprio relatório individual.</p>
       </details>
       <details>
         <summary>Com quanta antecedência preciso reservar?</summary>
@@ -1048,7 +1082,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 /* =========================================================
    1. CONFIGURACAO: trocar antes de publicar
    ========================================================= */
-const WHATSAPP = "5511973159046";   // WhatsApp da Ana Veloso
+// (número de WhatsApp da Ana é coletado apenas como dado do formulário,
+// e vai para a planilha; não há mais nenhum botão de disparo automático)
 
 /* =========================================================
    2. QUADRANTE DOS TEMPERAMENTOS
@@ -1062,42 +1097,34 @@ const ART = {
 
 const DOSSIE = {
   colerico:{
-    el:"Fogo · quente + seco", glifo:"g-fogo", nome:"Colérico", papel:"o motor", cor:"var(--bile)", tint:"rgba(231,151,46,.15)",
+    el:"Fogo · quente + seco", glifo:"g-fogo", nome:"Colérico", papel:"o motor", cor:"var(--bile)", tint:"rgba(219,98,90,.15)",
     linhas:[
-      ["Como decide","Rápido e pelo resultado. Quer o número, não o contexto. Decide antes de ter todos os dados, e acerta mais do que a média."],
-      ["O que entrega","Velocidade, meta batida, coragem para decidir sob pressão. É quem tira o projeto do papel."],
-      ["Onde trava","Atropela pessoas para ganhar tempo, delega tarefa mas não autoridade, e gera rotatividade sem perceber."],
-      ["Como extrair o melhor","Dê a meta e o prazo, não o passo a passo. Discorde com dado, não com emoção: ele respeita quem se posiciona."]
+      ["O defeito","Atropela pessoas para decidir rápido, e cobra sem dar autoridade de verdade."],
+      ["O que isso custa","Gente boa saindo da empresa sem dizer o motivo real."]
     ],
     frase:"“Isso já era pra estar pronto.”"
   },
   sanguineo:{
-    el:"Ar · quente + úmido", glifo:"g-ar", nome:"Sanguíneo", papel:"a ponte", cor:"var(--sangue)", tint:"rgba(219,98,90,.15)",
+    el:"Ar · quente + úmido", glifo:"g-ar", nome:"Sanguíneo", papel:"a ponte", cor:"var(--sangue)", tint:"rgba(230,185,60,.15)",
     linhas:[
-      ["Como decide","Pelo entusiasmo e pela relação. Compra a ideia rápido e muda de ideia com a mesma facilidade."],
-      ["O que entrega","Abre portas, vende, mobiliza a sala, segura o clima do time em semana ruim."],
-      ["Onde trava","Começa muito e termina pouco. Some no detalhe, no follow-up e no que é repetitivo."],
-      ["Como extrair o melhor","Dê visibilidade, prazo curto e retorno frequente. Coloque um melancólico ao lado para fechar o que ele abriu."]
+      ["O defeito","Começa com entusiasmo e some no detalhe e no acompanhamento."],
+      ["O que isso custa","Prazo prometido ao cliente que a operação nem sabia que existia."]
     ],
     frase:"“Deixa comigo que eu falo com ele.”"
   },
   melancolico:{
-    el:"Terra · frio + seco", glifo:"g-terra", nome:"Melancólico", papel:"o padrão", cor:"var(--atra)", tint:"rgba(133,131,218,.16)",
+    el:"Terra · frio + seco", glifo:"g-terra", nome:"Melancólico", papel:"o padrão", cor:"var(--atra)", tint:"rgba(79,127,219,.16)",
     linhas:[
-      ["Como decide","Com dado, análise e tempo. Antes de decidir, já mapeou tudo o que pode dar errado."],
-      ["O que entrega","Qualidade, processo e prevenção do erro caro. É quem evita o prejuízo que ninguém viu chegando."],
-      ["Onde trava","Paralisa no perfeccionismo e leva crítica ao trabalho como crítica à pessoa."],
-      ["Como extrair o melhor","Dê critério claro e antecedência. Critique o entregável, nunca o caráter, e nunca em público."]
+      ["O defeito","Trava no perfeccionismo e leva qualquer crítica para o lado pessoal."],
+      ["O que isso custa","Projeto parado esperando uma certeza que nunca chega."]
     ],
     frase:"“Ainda não está pronto.”"
   },
   fleumatico:{
     el:"Água · frio + úmido", glifo:"g-agua", nome:"Fleumático", papel:"a base", cor:"var(--fleuma)", tint:"rgba(79,179,151,.15)",
     linhas:[
-      ["Como decide","Devagar e evitando o conflito. Concorda em reunião e discorda em silêncio."],
-      ["O que entrega","Constância, paciência e a rotina que os outros três abandonam. É a cola do time."],
-      ["Onde trava","Não se posiciona, absorve demanda até parar e raramente pede ajuda."],
-      ["Como extrair o melhor","Pergunte a opinião dele diretamente, um a um. Dê prioridade explícita: sem ela, tudo tem o mesmo peso."]
+      ["O defeito","Não se posiciona e absorve demanda até não aguentar mais."],
+      ["O que isso custa","A pessoa mais estável do time saindo sem nenhum aviso."]
     ],
     frase:"“Por mim, tudo bem.”"
   }
@@ -1136,8 +1163,12 @@ cells.forEach(function(c){
 renderDossie("colerico");
 
 /* =========================================================
-   3. FORMULÁRIO → WhatsApp
+   3. FORMULÁRIO → GOOGLE SHEETS (via Apps Script)
    ========================================================= */
+// Cole aqui a URL do seu Web App do Apps Script (veja instruções no arquivo
+// "planilha-contato-apps-script.gs" que acompanha esta entrega).
+const SHEET_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
+
 const form = document.getElementById("leadForm");
 const foot = document.getElementById("formFoot");
 
@@ -1151,21 +1182,33 @@ form.addEventListener("submit", function(e){
     return;
   }
 
-  const texto =
-    "Olá, Ana! Quero uma proposta de palestra/treinamento.\n\n" +
-    "Nome: " + v("nome") + "\n" +
-    "Empresa: " + v("empresa") + "\n" +
-    "Cargo: " + (v("cargo") || "-") + "\n" +
-    "E-mail: " + v("email") + "\n" +
-    "WhatsApp: " + v("whats") + "\n" +
-    "Formato: " + v("tipo") + "\n" +
-    "Participantes: " + v("pessoas") + "\n" +
-    "Data prevista: " + (v("data") || "a definir") + "\n" +
-    "Contexto: " + (v("msg") || "-");
+  const dados = {
+    nome: v("nome"),
+    empresa: v("empresa"),
+    cargo: v("cargo") || "-",
+    email: v("email"),
+    whatsapp: v("whats"),
+    formato: v("tipo"),
+    participantes: v("pessoas"),
+    data: v("data") || "a definir",
+    contexto: v("msg") || "-"
+  };
 
   foot.style.color = "";
-  foot.textContent = "Abrindo o WhatsApp com sua mensagem pronta…";
-  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank");
+  foot.textContent = "Enviando…";
+
+  fetch(SHEET_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(dados)
+  }).then(function(){
+    foot.textContent = "Recebido! A Ana entra em contato em até 24h úteis.";
+    form.reset();
+  }).catch(function(){
+    foot.style.color = "#C1524B";
+    foot.textContent = "Não deu para enviar agora. Tente novamente em instantes.";
+  });
 });
 
 /* =========================================================
@@ -1230,11 +1273,6 @@ window.addEventListener("scroll", function(){
 updateProgress();
 
 const mCta = document.getElementById("mCta");
-const mCtaWpp = document.getElementById("mCtaWpp");
-if(mCtaWpp){
-  const msg = "Olá, Ana! Vi o site sobre os 4 temperamentos e quero saber mais sobre levar a palestra para minha empresa.";
-  mCtaWpp.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
-}
 
 let heroPassed = false;
 let contatoVisible = false;
