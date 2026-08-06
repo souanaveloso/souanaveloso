@@ -107,7 +107,7 @@ strong{font-weight:600}
 .progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:70;background:rgba(0,0,0,.2)}
 .progress__bar{
   height:100%;width:100%;transform:scaleX(0);transform-origin:left;
-  background:linear-gradient(90deg,var(--bile),var(--sangue),var(--atra),var(--fleuma));
+  background:linear-gradient(90deg,var(--sangue),var(--bile),var(--fleuma),var(--atra));
   will-change:transform;
 }
 @media(prefers-reduced-motion:no-preference){.progress__bar{transition:transform .1s linear}}
@@ -172,10 +172,10 @@ strong{font-weight:600}
 .hero .eyebrow{justify-content:center}
 .hero__rule{display:flex;height:3px;margin:0 auto 30px;max-width:280px}
 .hero__rule i{flex:1}
-.hero__rule i:nth-child(1){background:var(--bile)}
-.hero__rule i:nth-child(2){background:var(--sangue)}
-.hero__rule i:nth-child(3){background:var(--atra)}
-.hero__rule i:nth-child(4){background:var(--fleuma)}
+.hero__rule i:nth-child(1){background:var(--sangue)}
+.hero__rule i:nth-child(2){background:var(--bile)}
+.hero__rule i:nth-child(3){background:var(--fleuma)}
+.hero__rule i:nth-child(4){background:var(--atra)}
 .hero__scroll{
   position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:2;
   display:flex;flex-direction:column;align-items:center;gap:8px;
