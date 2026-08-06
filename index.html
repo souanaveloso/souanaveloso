@@ -152,20 +152,18 @@ strong{font-weight:600}
   min-height:86vh;min-height:86dvh;
   display:flex;align-items:center;
   padding:132px 0 84px;
+  background-image:url("hero-bg-elementos.png");
+  background-size:cover;background-position:center;background-repeat:no-repeat;
 }
-.hero__bg{position:absolute;inset:0;pointer-events:none;z-index:0}
-.hero__bg svg{position:absolute;opacity:.065}
-.hero__bg .g-tl{top:10%;left:5%;width:230px;height:230px;color:var(--sangue)}
-.hero__bg .g-tr{top:12%;right:6%;width:270px;height:270px;color:var(--bile)}
-.hero__bg .g-bl{bottom:8%;left:9%;width:200px;height:200px;color:var(--fleuma)}
-.hero__bg .g-br{bottom:10%;right:8%;width:240px;height:240px;color:var(--atra)}
-@media(max-width:700px){.hero__bg svg{opacity:.05;transform:scale(.6)}}
-.hero::after{
+.hero::before{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
   background:
-    radial-gradient(760px 460px at 50% -6%,  rgba(230,185,60,.16), transparent 62%),
-    radial-gradient(640px 480px at 8% 96%, rgba(79,179,151,.12),  transparent 64%),
-    radial-gradient(640px 480px at 92% 100%,  rgba(79,127,219,.12), transparent 64%);
+    linear-gradient(180deg, rgba(12,19,23,.72) 0%, rgba(12,19,23,.55) 45%, rgba(12,19,23,.82) 100%),
+    radial-gradient(72% 58% at 50% 46%, rgba(12,19,23,.62), transparent 72%);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(760px 440px at 50% 0%, rgba(230,185,60,.10), transparent 64%);
 }
 .hero__grid{position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center}
 .hero .eyebrow{justify-content:center}
@@ -330,17 +328,6 @@ strong{font-weight:600}
   .dossier{min-height:0;padding-left:22px}
   .dossier__wm{display:none}
 }
-
-/* ---------- mapa (produto individual) ---------- */
-.mapa-sec{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.mapa{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;margin-top:44px}
-.mapa__shot{border:1px solid var(--line);padding:12px;background:var(--ink)}
-.mapa__shot img{width:100%;height:auto;display:block}
-.mapa__list{list-style:none;margin:22px 0 26px;display:flex;flex-direction:column;gap:12px}
-.mapa__list li{display:flex;gap:12px;font-size:15.5px;color:var(--txt-light-mute);line-height:1.5}
-.mapa__list li span{color:var(--fleuma);font-family:var(--mono);font-size:13px;padding-top:3px;flex:none}
-.mapa__note{font-size:13px;color:var(--txt-light-mute);margin-top:14px}
-@media(max-width:900px){.mapa{grid-template-columns:1fr;gap:34px}}
 
 /* ---------- formatos ---------- */
 .formats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);margin-top:48px}
@@ -509,7 +496,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
     </a>
     <nav class="nav__links">
       <a href="#temperamentos">Os 4 Temperamentos</a>
-      <a href="#mapa">Descubra seu temperamento</a>
+      <a href="produtos.html">Meus Produtos</a>
       <a href="#ana">Quem é Ana Veloso</a>
       <a class="btn btn--primary" href="#contato"><span class="cta-full">Levar para minha empresa</span><span class="cta-short">Contratar</span></a>
     </nav>
@@ -518,12 +505,6 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 
 <!-- ====================== HERO ====================== -->
 <section class="hero" id="topo">
-  <div class="hero__bg" aria-hidden="true">
-    <svg class="g-tl"><use href="#g-ar"/></svg>
-    <svg class="g-tr"><use href="#g-fogo"/></svg>
-    <svg class="g-bl"><use href="#g-agua"/></svg>
-    <svg class="g-br"><use href="#g-terra"/></svg>
-  </div>
   <div class="wrap hero__grid">
     <div>
       <div class="eyebrow">Palestras · Workshops · Treinamento in company</div>
@@ -748,32 +729,6 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
           <div class="symptom__t">O colérico que virou o próprio gargalo</div>
           <div class="symptom__d">Decide rápido, cobra rápido, e não delega porque acha que ninguém faz do jeito certo. O time aprende a esperar ele decidir tudo, e a empresa para de crescer no ritmo dele.</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== MAPA DO SEU FUNCIONAMENTO ====================== -->
-<section class="section mapa-sec" id="mapa">
-  <div class="wrap rv">
-    <div class="eyebrow">Produto individual · Autoconhecimento</div>
-    <h2>Antes de levar isso para a empresa inteira, descubra o seu.</h2>
-    <p class="lead">O Mapa do Seu Funcionamento é o teste guiado que Ana criou para quem quer clareza sobre o próprio temperamento sem precisar interpretar nada sozinho. Você responde pergunta por pergunta, com orientação em cada uma, e vê o resultado na tela assim que termina.</p>
-
-    <div class="mapa">
-      <div class="mapa__shot">
-        <img src="https://omapadoseufuncionamento.com.br/wp-content/uploads/2026/05/92d73aac-1f15-48ce-ac7e-9fb0e4890f42-1-e1777845346740-1024x535.png" alt="O Mapa do Seu Funcionamento, teste guiado dos 4 temperamentos">
-      </div>
-      <div>
-        <ul class="mapa__list">
-          <li><span>→</span>Teste orientado individual, com Ana conduzindo cada pergunta</li>
-          <li><span>→</span>Resultado na tela assim que você termina, sem espera e sem cálculo</li>
-          <li><span>→</span>PDF para baixar com o seu temperamento, pontos fortes e tendências de comportamento</li>
-          <li><span>→</span>Tabela comparativa dos 4 temperamentos, para entender como lidar com cada perfil</li>
-          <li><span>→</span>Aula introdutória e 4 mini-aulas explicando os 4 temperamentos</li>
-        </ul>
-        <a class="btn btn--primary" href="https://www.omapadoseufuncionamento.com.br" target="_blank" rel="noopener">Saiba mais</a>
-        <p class="mapa__note">Produto individual, para uso pessoal. Diferente das palestras e treinamentos in company desta página.</p>
       </div>
     </div>
   </div>

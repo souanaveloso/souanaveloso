@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0C1317">
+<title>Meus Produtos | Ana Veloso</title>
+<meta name="description" content="Os produtos de Ana Veloso baseados na ciência dos 4 temperamentos: O Mapa do Seu Funcionamento, Mapeamento e Plano de Ação e a Mentoria INNER.">
+<meta property="og:title" content="Meus Produtos | Ana Veloso">
+<meta property="og:description" content="Autoconhecimento, mapeamento comportamental e mentoria para empresários e líderes.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ANA VELOSO, página de produtos
+   Mesmo sistema visual da página institucional.
+   ============================================================ */
+:root{
+  --ink:#0C1317;
+  --ink-2:#12202A;
+  --cal:#F4F0E7;
+  --line:rgba(244,240,231,.16);
+  --line-dark:rgba(12,19,23,.14);
+
+  /* os 4 humores: cor viva */
+  --bile:#DB625A;      /* colérico */
+  --sangue:#E6B93C;    /* sanguíneo */
+  --atra:#4F7FDB;      /* melancólico */
+  --fleuma:#4FB397;    /* fleumático */
+
+  --bile-deep:#361310;
+  --sangue-deep:#332405;
+  --atra-deep:#101A33;
+  --fleuma-deep:#0B2B26;
+
+  --sangue-ink:#8A6415;
+
+  --txt-dark:#0C1317;
+  --txt-mute:#56626A;
+  --txt-light:#EEEBE4;
+  --txt-light-mute:#9DADB5;
+
+  --display:"Plus Jakarta Sans", "Segoe UI", sans-serif;
+  --body:"Instrument Sans", system-ui, -apple-system, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, monospace;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);color:var(--txt-light);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  font-weight:400;letter-spacing:-.003em;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a,button{touch-action:manipulation}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+h1,h2,h3,.brand__name{font-family:var(--display);font-weight:700}
+h1{font-size:clamp(34px,5vw,58px);line-height:1.14;letter-spacing:-.014em;margin-bottom:22px;text-wrap:balance}
+h2{font-size:clamp(27px,3.4vw,40px);line-height:1.12;letter-spacing:-.02em;margin-bottom:16px;text-wrap:balance}
+h3{font-size:21px;line-height:1.18;letter-spacing:-.012em;margin-bottom:10px}
+p{text-wrap:pretty}
+.lead{font-size:19px;line-height:1.6;color:var(--txt-light-mute);max-width:62ch}
+strong{font-weight:600}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--sangue);
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;flex:none}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--body);font-size:15px;font-weight:600;letter-spacing:-.005em;
+  padding:17px 30px;border:1px solid transparent;border-radius:2px;
+  text-decoration:none;cursor:pointer;transition:transform .18s ease,background .18s ease;
+}
+.btn--primary{background:var(--sangue);color:#000;border-color:var(--sangue);font-weight:700}
+.btn--primary:hover{transform:translateY(-2px);background:#EFC65A}
+.btn--ghost{background:transparent;color:var(--txt-light);border-color:var(--line)}
+.btn--ghost:hover{border-color:var(--txt-light);transform:translateY(-2px)}
+:focus-visible{outline:2px solid var(--sangue);outline-offset:3px}
+
+/* ---------- topo ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  background:rgba(12,19,23,.88);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav__in{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:66px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:baseline;gap:11px;text-decoration:none}
+.brand__name{font-size:21px;letter-spacing:-.01em}
+.brand__tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--txt-light-mute)}
+.nav__links{display:flex;align-items:center;gap:28px}
+.nav__links a{font-size:14.5px;text-decoration:none;color:var(--txt-light-mute);transition:color .2s}
+.nav__links a:hover{color:var(--txt-light)}
+.nav__links .btn--primary{color:#000}
+.nav .btn{padding:11px 20px;font-size:13.5px}
+@media(max-width:940px){.nav__links a:not(.btn){display:none}.brand__tag{display:none}}
+
+/* ---------- topo da página ---------- */
+.head{
+  position:relative;overflow:hidden;padding:142px 0 74px;text-align:center;
+  background:
+    radial-gradient(700px 420px at 50% 0%, rgba(230,185,60,.14), transparent 64%),
+    radial-gradient(600px 460px at 8% 100%, rgba(79,179,151,.10), transparent 66%),
+    radial-gradient(600px 460px at 92% 100%, rgba(79,127,219,.10), transparent 66%);
+}
+.head__in{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.head .eyebrow{justify-content:center}
+.head__rule{display:flex;height:3px;margin:0 auto 26px;max-width:260px}
+.head__rule i{flex:1}
+.head__rule i:nth-child(1){background:var(--bile)}
+.head__rule i:nth-child(2){background:var(--sangue)}
+.head__rule i:nth-child(3){background:var(--atra)}
+.head__rule i:nth-child(4){background:var(--fleuma)}
+
+/* ---------- produto ---------- */
+.prod{
+  position:relative;border-top:1px solid var(--line);
+  padding:84px 0;
+  background:linear-gradient(178deg, var(--deep) 0%, var(--ink) 62%);
+}
+.prod__in{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.prod:nth-child(even) .prod__media{order:2}
+.prod__badge{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--c);border:1px solid var(--c);padding:7px 12px;border-radius:2px;margin-bottom:18px;
+}
+.prod h2{color:var(--txt-light)}
+.prod__sub{font-size:18px;line-height:1.55;color:var(--txt-light-mute);margin-bottom:24px}
+.prod__list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.prod__list li{display:flex;gap:13px;font-size:15.5px;line-height:1.52;color:var(--txt-light)}
+.prod__list li span{color:var(--c);font-family:var(--mono);font-size:13px;padding-top:3px;flex:none}
+.prod__who{
+  border-left:3px solid var(--c);padding:16px 20px;margin-bottom:28px;
+  background:rgba(255,255,255,.03);
+}
+.prod__who b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--txt-light-mute);margin-bottom:7px;font-weight:500}
+.prod__who p{font-size:15.5px;line-height:1.55;color:var(--txt-light)}
+.prod__cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.prod__cta .btn--primary{background:var(--c);border-color:var(--c)}
+.prod__cta .btn--primary:hover{filter:brightness(1.12)}
+
+.prod__media{position:relative}
+.prod__card{
+  position:relative;border:1px solid var(--line);padding:14px;
+  background:rgba(255,255,255,.02);overflow:hidden;
+}
+.prod__card img{width:100%;height:auto;display:block}
+.prod__art{
+  aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(150deg, var(--deep), var(--ink) 78%);position:relative;overflow:hidden;
+}
+.prod__art svg{width:44%;height:44%;stroke:var(--c);fill:none;stroke-width:.9;opacity:.6}
+.prod__art::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(70% 60% at 50% 104%, var(--glow), transparent 70%);
+}
+.prod__n{
+  position:absolute;top:-1px;right:18px;z-index:3;
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+  background:var(--ink);color:var(--c);padding:6px 10px;border:1px solid var(--line);border-top:0;
+}
+@media(max-width:900px){
+  .prod{padding:64px 0}
+  .prod__in{grid-template-columns:1fr;gap:34px}
+  .prod:nth-child(even) .prod__media{order:0}
+}
+
+/* ---------- fechamento ---------- */
+.close-sec{
+  border-top:1px solid var(--line);padding:88px 0;text-align:center;
+  background:
+    radial-gradient(700px 420px at 50% 0%, rgba(230,185,60,.12), transparent 64%),
+    var(--ink-2);
+}
+.close-sec__in{max-width:680px;margin:0 auto}
+.close-sec .lead{margin:0 auto 30px}
+
+/* ---------- rodapé ---------- */
+.footer{padding:56px 0 42px;border-top:1px solid var(--line);background:var(--ink)}
+.footer__in{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+.footer a{font-size:14px;color:var(--txt-light-mute);text-decoration:none}
+.footer a:hover{color:var(--sangue)}
+.footer__legal{font-size:12.5px;color:#5C6870;margin-top:26px}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- glifos alquímicos dos 4 elementos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="g-fogo" viewBox="0 0 24 24"><path d="M12 3.2 22 20.8H2Z" stroke-linejoin="round"/></symbol>
+  <symbol id="g-ar" viewBox="0 0 24 24"><path d="M12 3.2 22 20.8H2Z" stroke-linejoin="round"/><path d="M6.4 15h11.2"/></symbol>
+  <symbol id="g-terra" viewBox="0 0 24 24"><path d="M12 20.8 2 3.2h20Z" stroke-linejoin="round"/><path d="M6.4 9h11.2"/></symbol>
+  <symbol id="g-agua" viewBox="0 0 24 24"><path d="M12 20.8 2 3.2h20Z" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- ====================== TOPO ====================== -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="index.html">
+      <span class="brand__name">Ana Veloso</span>
+      <span class="brand__tag">Comportamento &amp; Resultado</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Início</a>
+      <a href="index.html#temperamentos">Os 4 Temperamentos</a>
+      <a href="index.html#ana">Quem é Ana Veloso</a>
+      <a class="btn btn--primary" href="index.html#contato">Levar para minha empresa</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ====================== ABERTURA ====================== -->
+<section class="head">
+  <div class="wrap head__in">
+    <div class="eyebrow">Meus produtos</div>
+    <div class="head__rule" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <h1>Três caminhos para dominar o seu temperamento.</h1>
+    <p class="lead" style="margin:0 auto">Do primeiro diagnóstico até a mentoria de execução. Cada produto atende um momento diferente de quem quer usar o comportamento humano como ferramenta de resultado.</p>
+  </div>
+</section>
+
+<!-- ====================== PRODUTO 1 ====================== -->
+<article class="prod rv" style="--c:var(--fleuma);--deep:var(--fleuma-deep);--glow:rgba(79,179,151,.26)">
+  <div class="wrap prod__in">
+    <div class="prod__media">
+      <div class="prod__card">
+        <span class="prod__n">01</span>
+        <img src="https://omapadoseufuncionamento.com.br/wp-content/uploads/2026/05/92d73aac-1f15-48ce-ac7e-9fb0e4890f42-1-e1777845346740-1024x535.png" alt="O Mapa do Seu Funcionamento, teste guiado dos 4 temperamentos">
+      </div>
+    </div>
+    <div>
+      <span class="prod__badge"><svg style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.3"><use href="#g-agua"/></svg>Comece por aqui</span>
+      <h2>O Mapa do Seu Funcionamento</h2>
+      <p class="prod__sub">O teste guiado para quem quer clareza sobre o próprio temperamento sem precisar interpretar nada sozinho. Você responde pergunta por pergunta, com orientação em cada uma, e vê o resultado na tela assim que termina.</p>
+      <ul class="prod__list">
+        <li><span>→</span>Teste orientado individual, com Ana conduzindo cada pergunta</li>
+        <li><span>→</span>Resultado na tela assim que você termina, sem espera e sem cálculo</li>
+        <li><span>→</span>PDF para baixar com o seu temperamento, pontos fortes e tendências de comportamento</li>
+        <li><span>→</span>Tabela comparativa dos 4 temperamentos, para entender como lidar com cada perfil</li>
+        <li><span>→</span>Aula introdutória e 4 mini-aulas explicando os 4 temperamentos</li>
+      </ul>
+      <div class="prod__who">
+        <b>Para quem é</b>
+        <p>Para quem está descobrindo o assunto agora e quer o primeiro retrato claro de como funciona, sem compromisso maior.</p>
+      </div>
+      <div class="prod__cta">
+        <a class="btn btn--primary" href="https://www.omapadoseufuncionamento.com.br" target="_blank" rel="noopener">Conhecer o Mapa</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ====================== PRODUTO 2 ====================== -->
+<article class="prod rv" style="--c:var(--bile);--deep:var(--bile-deep);--glow:rgba(219,98,90,.26)">
+  <div class="wrap prod__in">
+    <div class="prod__media">
+      <div class="prod__card">
+        <span class="prod__n">02</span>
+        <div class="prod__art">
+          <svg><use href="#g-fogo"/></svg>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="prod__badge"><svg style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.3"><use href="#g-fogo"/></svg>Análise individual</span>
+      <h2>Mapeamento e Plano de Ação</h2>
+      <p class="prod__sub">Existe uma resistência interna dominando os seus resultados, e o temperamento é a primeira coisa que você precisa dominar. Aqui o mapeamento vem acompanhado de um plano para enfrentar essa resistência.</p>
+      <ul class="prod__list">
+        <li><span>→</span>Seu mapa de funcionamento completo, com as travas que aparecem no seu dia a dia</li>
+        <li><span>→</span>Plano de ação construído sobre o que o mapeamento revelou</li>
+        <li><span>→</span>Foco no inimigo interno: a resistência que afasta você da constância</li>
+        <li><span>→</span>Direcionamento voltado para crescimento profissional, não só autoconhecimento</li>
+      </ul>
+      <div class="prod__who">
+        <b>Para quem é</b>
+        <p>Para quem já percebeu que o problema não é falta de informação, e sim algo interno que trava a execução e a constância.</p>
+      </div>
+      <div class="prod__cta">
+        <a class="btn btn--primary" href="https://go.hotmart.com/H103157312V?dp=1" target="_blank" rel="noopener">Quero meu mapeamento</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ====================== PRODUTO 3 ====================== -->
+<article class="prod rv" style="--c:var(--sangue);--deep:var(--sangue-deep);--glow:rgba(230,185,60,.26)">
+  <div class="wrap prod__in">
+    <div class="prod__media">
+      <div class="prod__card">
+        <span class="prod__n">03</span>
+        <div class="prod__art">
+          <svg><use href="#g-ar"/></svg>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="prod__badge"><svg style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.3"><use href="#g-ar"/></svg>Mentoria</span>
+      <h2>Mentoria INNER</h2>
+      <p class="prod__sub">A mentoria para quem entende que crescimento sustentável exige autodomínio, método e execução consciente. O comportamento humano entra aqui como chave do resultado no negócio.</p>
+      <ul class="prod__list">
+        <li><span>→</span>Entender e ordenar o seu temperamento na prática e dentro do seu negócio</li>
+        <li><span>→</span>Identificar os sabotadores que limitam os seus resultados e fazer acontecer</li>
+        <li><span>→</span>Alinhar mente, ação e estratégia com base em inteligência temperamental</li>
+        <li><span>→</span>Reestruturar rotina e decisões para alta performance empresarial</li>
+        <li><span>→</span>Fortalecer a sua liderança e a clareza diante das demandas do negócio</li>
+      </ul>
+      <div class="prod__who">
+        <b>Para quem é</b>
+        <p>Para empresários, líderes e profissionais que querem expandir resultados de forma prática e estratégica.</p>
+      </div>
+      <div class="prod__cta">
+        <a class="btn btn--primary" href="https://pay.hotmart.com/N103280361X" target="_blank" rel="noopener">Entrar na INNER</a>
+        <a class="btn btn--ghost" href="https://go.hotmart.com/N103280361X" target="_blank" rel="noopener">Ver detalhes</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ====================== FECHAMENTO ====================== -->
+<section class="close-sec rv">
+  <div class="wrap close-sec__in">
+    <h2>E se o assunto for a sua equipe inteira?</h2>
+    <p class="lead">Os produtos desta página são individuais. Para palestras, workshops e treinamento in company, o caminho é outro.</p>
+    <a class="btn btn--primary" href="index.html#contato">Falar sobre a minha empresa</a>
+  </div>
+</section>
+
+<!-- ====================== RODAPÉ ====================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__in">
+      <a class="brand" href="index.html">
+        <span class="brand__name">Ana Veloso</span>
+        <span class="brand__tag">souanaveloso.com.br</span>
+      </a>
+      <div style="display:flex;gap:26px;flex-wrap:wrap">
+        <a href="https://www.instagram.com/souanaveloso" target="_blank" rel="noopener">@souanaveloso</a>
+        <a href="index.html">Início</a>
+        <a href="index.html#contato">Contratar</a>
+      </div>
+    </div>
+    <p class="footer__legal">© 2026 Ana Veloso · Treinamento comportamental e ciência dos 4 temperamentos. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting){ en.target.classList.add("in"); obs.unobserve(en.target); }
+  });
+}, {threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){ obs.observe(el); });
+</script>
+</body>
+</html>
