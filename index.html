@@ -205,11 +205,11 @@ strong{font-weight:600}
   padding:22px 0;border-bottom:1px solid var(--line-dark)}
 .symptom__n{font-family:var(--mono);font-size:12px;letter-spacing:.12em;padding-top:5px;
   font-weight:500;color:var(--c)}
-.symptom:nth-child(1){--c:var(--bile-ink)}
-.symptom:nth-child(2){--c:var(--sangue-ink)}
-.symptom:nth-child(3){--c:var(--atra-ink)}
-.symptom:nth-child(4){--c:var(--fleuma-ink)}
-.symptom:nth-child(5){--c:var(--bile-ink)}
+.symptom:nth-child(1){--c:var(--sangue-ink)}
+.symptom:nth-child(2){--c:var(--bile-ink)}
+.symptom:nth-child(3){--c:var(--fleuma-ink)}
+.symptom:nth-child(4){--c:var(--atra-ink)}
+.symptom:nth-child(5){--c:var(--sangue-ink)}
 .symptom{border-left:3px solid transparent;padding-left:0;transition:border-color .25s,padding-left .25s}
 .symptom:hover{border-left-color:var(--c);padding-left:14px}
 .symptom__t{font-weight:600;font-size:17.5px;margin-bottom:4px}
@@ -341,10 +341,10 @@ strong{font-weight:600}
 /* ---------- formatos ---------- */
 .formats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);margin-top:48px}
 .format{background:var(--cal);padding:34px 32px;transition:background .25s;position:relative;border-top:4px solid var(--c)}
-.format:nth-child(1){--c:var(--bile-ink)}
-.format:nth-child(2){--c:var(--sangue-ink)}
-.format:nth-child(3){--c:var(--atra-ink)}
-.format:nth-child(4){--c:var(--fleuma-ink)}
+.format:nth-child(1){--c:var(--sangue-ink)}
+.format:nth-child(2){--c:var(--bile-ink)}
+.format:nth-child(3){--c:var(--fleuma-ink)}
+.format:nth-child(4){--c:var(--atra-ink)}
 .format:hover{background:#fff}
 .format__k{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--c);margin-bottom:16px;font-weight:500}
 .format__d{font-size:15.5px;color:var(--txt-mute);margin-bottom:16px}
@@ -382,10 +382,10 @@ strong{font-weight:600}
 .step::before{content:"";position:absolute;top:-1px;left:0;width:0;height:3px;background:var(--c);transition:width .7s ease}
 .step.in::before{width:100%}
 .step__n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--c);margin-bottom:18px;font-weight:500}
-.step:nth-child(1){--c:var(--bile)}
-.step:nth-child(2){--c:var(--sangue)}
-.step:nth-child(3){--c:var(--atra)}
-.step:nth-child(4){--c:var(--fleuma)}
+.step:nth-child(1){--c:var(--sangue)}
+.step:nth-child(2){--c:var(--bile)}
+.step:nth-child(3){--c:var(--fleuma)}
+.step:nth-child(4){--c:var(--atra)}
 .step{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent 60%)}
 .step:hover{background:linear-gradient(180deg,color-mix(in srgb,var(--c) 12%,transparent),transparent 70%)}
 .step__d{font-size:15px;color:var(--txt-light-mute);line-height:1.55}
@@ -409,10 +409,10 @@ strong{font-weight:600}
 /* ---------- depoimentos ---------- */
 .tstm{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
 .tstm a{position:relative;display:block;text-decoration:none;border:1px solid var(--line);border-bottom:4px solid var(--c);overflow:hidden;background:var(--ink-2)}
-.tstm a:nth-child(1){--c:var(--bile)}
-.tstm a:nth-child(2){--c:var(--sangue)}
-.tstm a:nth-child(3){--c:var(--atra)}
-.tstm a:nth-child(4){--c:var(--fleuma)}
+.tstm a:nth-child(1){--c:var(--sangue)}
+.tstm a:nth-child(2){--c:var(--bile)}
+.tstm a:nth-child(3){--c:var(--fleuma)}
+.tstm a:nth-child(4){--c:var(--atra)}
 .tstm img{width:100%;height:250px;object-fit:cover;filter:grayscale(.3) brightness(.78);transition:filter .3s,transform .5s}
 .tstm a:hover img{filter:grayscale(0) brightness(.95);transform:scale(1.04)}
 .tstm__ico{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
@@ -454,10 +454,10 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 .faq details{border-bottom:1px solid var(--line-dark)}
 .faq summary{list-style:none;cursor:pointer;padding:22px 34px 22px 0;position:relative;font-size:17.5px;font-weight:600}
 .faq summary::-webkit-details-marker{display:none}
-.faq details:nth-child(4n+1){--c:var(--bile-ink)}
-.faq details:nth-child(4n+2){--c:var(--sangue-ink)}
-.faq details:nth-child(4n+3){--c:var(--atra-ink)}
-.faq details:nth-child(4n+4){--c:var(--fleuma-ink)}
+.faq details:nth-child(4n+1){--c:var(--sangue-ink)}
+.faq details:nth-child(4n+2){--c:var(--bile-ink)}
+.faq details:nth-child(4n+3){--c:var(--fleuma-ink)}
+.faq details:nth-child(4n+4){--c:var(--atra-ink)}
 .faq details{border-left:3px solid transparent;padding-left:0;transition:border-color .25s,padding-left .25s}
 .faq details[open]{border-left-color:var(--c);padding-left:16px}
 .faq summary::after{content:"+";position:absolute;right:4px;top:19px;font-size:23px;color:var(--c);transition:transform .25s}
@@ -904,7 +904,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
     <div class="form-side">
       <div class="eyebrow">Agenda 2026</div>
       <h2>Leve os 4 temperamentos para dentro da sua empresa.</h2>
-      <p class="lead">Preencha e receba a proposta com formato, investimento e datas disponíveis.</p>
+      <p class="lead">Preencha e receba a proposta com formato, investimento e datas disponíveis. O envio abre direto no WhatsApp da Ana.</p>
       <ul>
         <li><span>01</span> Você conta o contexto e o objetivo do evento</li>
         <li><span>02</span> Ana devolve o formato recomendado e a proposta</li>
@@ -1015,10 +1015,10 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
         <span class="brand__tag">souanaveloso.com.br</span>
       </a>
       <div class="footer__glyphs" aria-hidden="true">
-        <svg class="glyph" style="color:var(--bile)"><use href="#g-fogo"/></svg>
         <svg class="glyph" style="color:var(--sangue)"><use href="#g-ar"/></svg>
-        <svg class="glyph" style="color:var(--atra)"><use href="#g-terra"/></svg>
+        <svg class="glyph" style="color:var(--bile)"><use href="#g-fogo"/></svg>
         <svg class="glyph" style="color:var(--fleuma)"><use href="#g-agua"/></svg>
+        <svg class="glyph" style="color:var(--atra)"><use href="#g-terra"/></svg>
       </div>
       <div style="display:flex;gap:26px;flex-wrap:wrap">
         <a href="https://www.instagram.com/souanaveloso" target="_blank" rel="noopener">@souanaveloso</a>
@@ -1116,11 +1116,9 @@ cells.forEach(function(c){
 renderDossie("colerico");
 
 /* =========================================================
-   3. FORMULÁRIO → GOOGLE SHEETS (via Apps Script)
+   3. FORMULÁRIO → WhatsApp
    ========================================================= */
-// Cole aqui a URL do seu Web App do Apps Script (veja instruções no arquivo
-// "planilha-contato-apps-script.gs" que acompanha esta entrega).
-const SHEET_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
+const WHATSAPP = "5511973159046";   // WhatsApp da Ana Veloso
 
 const form = document.getElementById("leadForm");
 const foot = document.getElementById("formFoot");
@@ -1135,33 +1133,21 @@ form.addEventListener("submit", function(e){
     return;
   }
 
-  const dados = {
-    nome: v("nome"),
-    empresa: v("empresa"),
-    cargo: v("cargo") || "-",
-    email: v("email"),
-    whatsapp: v("whats"),
-    formato: v("tipo"),
-    participantes: v("pessoas"),
-    data: v("data") || "a definir",
-    contexto: v("msg") || "-"
-  };
+  const texto =
+    "Olá, Ana! Quero uma proposta de palestra/treinamento.\n\n" +
+    "Nome: " + v("nome") + "\n" +
+    "Empresa: " + v("empresa") + "\n" +
+    "Cargo: " + (v("cargo") || "-") + "\n" +
+    "E-mail: " + v("email") + "\n" +
+    "WhatsApp: " + v("whats") + "\n" +
+    "Formato: " + v("tipo") + "\n" +
+    "Participantes: " + v("pessoas") + "\n" +
+    "Data prevista: " + (v("data") || "a definir") + "\n" +
+    "Contexto: " + (v("msg") || "-");
 
   foot.style.color = "";
-  foot.textContent = "Enviando…";
-
-  fetch(SHEET_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "text/plain;charset=utf-8" },
-    body: JSON.stringify(dados)
-  }).then(function(){
-    foot.textContent = "Recebido! A Ana entra em contato em até 24h úteis.";
-    form.reset();
-  }).catch(function(){
-    foot.style.color = "#C1524B";
-    foot.textContent = "Não deu para enviar agora. Tente novamente em instantes.";
-  });
+  foot.textContent = "Abrindo o WhatsApp com sua mensagem pronta…";
+  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank");
 });
 
 /* =========================================================
