@@ -79,7 +79,7 @@ h1,h2,h3,.brand__name,.cell__name,.dossier__name,.diag__punch p,.dossier__quote,
   font-family:var(--display);
   font-weight:700;
 }
-h1{font-size:clamp(32px,5.2vw,64px);line-height:1.16;letter-spacing:-.012em;margin-bottom:26px;text-wrap:balance}
+h1{font-size:clamp(34px,5.6vw,68px);line-height:1.14;letter-spacing:-.014em;margin-bottom:0;text-wrap:balance}
 @media(max-width:560px){h1{font-size:30px;line-height:1.2}}
 h2{font-size:clamp(31px,4.3vw,51px);line-height:1.08;letter-spacing:-.022em;margin-bottom:20px;text-wrap:balance}
 h3{font-size:24px;line-height:1.16;letter-spacing:-.015em;margin-bottom:10px}
@@ -126,22 +126,6 @@ strong{font-weight:600}
 .btn--wide{width:100%}
 :focus-visible{outline:2px solid var(--sangue);outline-offset:3px}
 
-/* ---------- barra fixa mobile ---------- */
-.mcta{
-  position:fixed;left:12px;right:12px;bottom:12px;z-index:55;
-  display:none;align-items:stretch;gap:10px;
-  padding-bottom:env(safe-area-inset-bottom,0);
-  transform:translateY(140%);transition:transform .35s ease;
-}
-.mcta.show{transform:none}
-.mcta__btn{
-  flex:1;display:flex;align-items:center;justify-content:center;
-  background:var(--sangue);color:#000;font-weight:700;font-size:14.5px;
-  border-radius:3px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35);
-}
-@media(max-width:940px){.mcta{display:flex}}
-@media(min-width:941px){.mcta{display:none!important}}
-
 /* ---------- topo ---------- */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:60;
@@ -163,45 +147,46 @@ strong{font-weight:600}
 @media(max-width:400px){.cta-full{display:none}.cta-short{display:inline}}
 
 /* ---------- hero ---------- */
-.hero{position:relative;padding:150px 0 78px;overflow:hidden}
-.hero::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(680px 400px at 72% 6%,  rgba(230,185,60,.22), transparent 64%),
-    radial-gradient(560px 420px at 96% 52%, rgba(219,98,90,.14),  transparent 66%),
-    radial-gradient(620px 480px at 2% 88%,  rgba(79,127,219,.15), transparent 66%),
-    radial-gradient(700px 460px at 34% 104%,rgba(79,179,151,.14),  transparent 64%);
+.hero{
+  position:relative;overflow:hidden;
+  min-height:86vh;min-height:86dvh;
+  display:flex;align-items:center;
+  padding:132px 0 84px;
 }
-.hero__rule{display:flex;height:3px;margin-bottom:30px;max-width:360px}
+.hero__bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero__bg svg{position:absolute;opacity:.065}
+.hero__bg .g-tl{top:10%;left:5%;width:230px;height:230px;color:var(--sangue)}
+.hero__bg .g-tr{top:12%;right:6%;width:270px;height:270px;color:var(--bile)}
+.hero__bg .g-bl{bottom:8%;left:9%;width:200px;height:200px;color:var(--fleuma)}
+.hero__bg .g-br{bottom:10%;right:8%;width:240px;height:240px;color:var(--atra)}
+@media(max-width:700px){.hero__bg svg{opacity:.05;transform:scale(.6)}}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:
+    radial-gradient(760px 460px at 50% -6%,  rgba(230,185,60,.16), transparent 62%),
+    radial-gradient(640px 480px at 8% 96%, rgba(79,179,151,.12),  transparent 64%),
+    radial-gradient(640px 480px at 92% 100%,  rgba(79,127,219,.12), transparent 64%);
+}
+.hero__grid{position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center}
+.hero .eyebrow{justify-content:center}
+.hero__rule{display:flex;height:3px;margin:0 auto 30px;max-width:280px}
 .hero__rule i{flex:1}
 .hero__rule i:nth-child(1){background:var(--bile)}
 .hero__rule i:nth-child(2){background:var(--sangue)}
 .hero__rule i:nth-child(3){background:var(--atra)}
 .hero__rule i:nth-child(4){background:var(--fleuma)}
-.hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:64px;align-items:start}
-.hero h1 .mark{font-style:italic;color:var(--sangue)}
-.hero__sub{font-size:19.5px;line-height:1.58;color:var(--txt-light-mute);max-width:52ch;margin-bottom:34px}
-.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
-.hero__note{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--txt-light-mute)}
-
-.portrait{position:relative}
-.portrait__frame{position:relative;border:1px solid var(--line);padding:14px}
-.portrait__frame img{width:100%;height:520px;object-fit:cover;object-position:center 12%;filter:grayscale(.3) contrast(1.05)}
-.ptag{
-  position:absolute;display:flex;align-items:center;gap:7px;
-  font-family:var(--mono);font-size:10px;letter-spacing:.18em;
-  text-transform:uppercase;background:var(--ink);padding:5px 9px;
+.hero__scroll{
+  position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--txt-light-mute);
 }
-.ptag .glyph{width:14px;height:14px}
-.ptag--a{top:-12px;left:22px;color:var(--sangue)}
-.ptag--b{top:-12px;right:22px;color:var(--bile)}
-.ptag--c{bottom:-12px;left:22px;color:var(--fleuma)}
-.ptag--d{bottom:-12px;right:22px;color:var(--atra)}
+.hero__scroll svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.6;animation:scrollcue 1.6s ease-in-out infinite}
+@keyframes scrollcue{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
+@media(max-width:640px){.hero__scroll{display:none}}
+.hero h1 .mark{font-style:italic;color:var(--sangue)}
 @media(max-width:960px){
   .hero{padding:118px 0 58px}
-  .hero__grid{grid-template-columns:1fr;gap:46px}
-  .portrait{max-width:440px}
-  .portrait__frame img{height:420px}
 }
 
 /* ---------- diagnóstico ---------- */
@@ -416,9 +401,9 @@ strong{font-weight:600}
 @media(max-width:560px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}}
 
 /* ---------- bio ---------- */
-.bio{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.bio{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
 .bio__img{border:1px solid var(--line-dark);padding:12px;background:#fff}
-.bio__img img{width:100%;height:560px;object-fit:cover;object-position:center 20%}
+.bio__img img{width:100%;height:560px;object-fit:cover;object-position:center 12%}
 .bio p{margin-bottom:16px;font-size:17px;color:var(--txt-mute)}
 .certs{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
 .cert{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
@@ -507,11 +492,6 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 <!-- barra de progresso de leitura -->
 <div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
 
-<!-- barra fixa de ação (mobile) -->
-<div class="mcta" id="mCta">
-  <a class="mcta__btn" href="#contato">Quero minha proposta</a>
-</div>
-
 <!-- glifos alquímicos dos 4 elementos -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="g-fogo" viewBox="0 0 24 24"><path d="M12 3.2 22 20.8H2Z" stroke-linejoin="round"/></symbol>
@@ -538,22 +518,22 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 
 <!-- ====================== HERO ====================== -->
 <section class="hero" id="topo">
+  <div class="hero__bg" aria-hidden="true">
+    <svg class="g-tl"><use href="#g-ar"/></svg>
+    <svg class="g-tr"><use href="#g-fogo"/></svg>
+    <svg class="g-bl"><use href="#g-agua"/></svg>
+    <svg class="g-br"><use href="#g-terra"/></svg>
+  </div>
   <div class="wrap hero__grid">
     <div>
       <div class="eyebrow">Palestras · Workshops · Treinamento in company</div>
       <div class="hero__rule" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <h1>Sua empresa tem um problema! Tem <span class="mark">4 temperamentos</span> que ninguém aprendeu a gerenciar.</h1>
+      <h1>Sua empresa tem um problema!<br>Tem <span class="mark">4 temperamentos</span> que ninguém<br>aprendeu a gerenciar.</h1>
     </div>
-
-    <div class="portrait">
-      <div class="portrait__frame">
-        <span class="ptag ptag--a"><svg class="glyph"><use href="#g-ar"/></svg>Sanguíneo</span>
-        <span class="ptag ptag--b"><svg class="glyph"><use href="#g-fogo"/></svg>Colérico</span>
-        <span class="ptag ptag--c"><svg class="glyph"><use href="#g-agua"/></svg>Fleumático</span>
-        <span class="ptag ptag--d"><svg class="glyph"><use href="#g-terra"/></svg>Melancólico</span>
-        <img src="ana-veloso-foto-hero.png" alt="Ana Veloso, treinadora comportamental">
-      </div>
-    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Role para conhecer</span>
+    <svg viewBox="0 0 24 24"><path d="M12 4v15M5 12l7 7 7-7"/></svg>
   </div>
 </section>
 
@@ -899,23 +879,27 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
 <!-- ====================== ANA ====================== -->
 <section class="section section--light" id="ana">
   <div class="wrap bio rv">
-    <div class="bio__img">
-      <img src="https://souanaveloso.com.br/wp-content/uploads/2025/12/freepik__img1-faa-uma-verso-dessa-foto-colorida__95116-1024x585.jpeg" alt="Ana Veloso em atuação">
-    </div>
     <div>
       <div class="eyebrow">Quem conduz</div>
       <h2>Ana Veloso</h2>
-      <p class="lead" style="margin-bottom:24px">Treinadora comportamental e especialista na ciência dos 4 temperamentos aplicada ao mercado de trabalho. Criadora do Método Origem.</p>
-      <p>Formada em Comunicação e jornalista com mais de 14 anos de experiência em lidar com pessoas, Ana uniu a bagagem em comunicação à área do comportamento humano. Atualmente cursa três pós-graduações em Neurociência, aprofundando a conexão entre ciência e prática.</p>
-      <p>Hoje ajuda profissionais, empresas e empreendedores a destravar potenciais e reduzir pontos fracos: lidar melhor com pessoas, diminuir conflitos e aumentar resultados. Sua missão é mostrar, de forma clara e estratégica, como a ciência dos 4 temperamentos influencia diretamente a carreira, as decisões, o crescimento e as relações do dia a dia.</p>
+      <p class="lead" style="margin-bottom:24px">Treinadora comportamental e especialista na ciência dos 4 temperamentos aplicada ao mercado de trabalho.</p>
+      <p>Jornalista com mais de 14 anos de experiência em TV, liderando times e unindo a bagagem em comunicação à liderança.</p>
+      <p>Hoje atua como empreendedora, treinando profissionais e utilizando temperamento e comportamento humano para gerar resultados.</p>
+      <p>Atualmente cursa três pós-graduações em neurociência pela PUC e um curso de neurociência e comportamento humano em Harvard.</p>
       <div class="certs">
         <span class="cert">Analista de Temperamentos</span>
         <span class="cert">Analista de Perfil Comportamental</span>
         <span class="cert">Coach de Carreira</span>
         <span class="cert">Jornalista</span>
         <span class="cert">Criadora do Método Origem</span>
+        <span class="cert">Em formação em neurociência</span>
+        <span class="cert">Cursando certificação em terapia</span>
       </div>
     </div>
+    <div class="bio__img">
+      <img src="ana-veloso-foto-bio.png" alt="Ana Veloso, treinadora comportamental">
+    </div>
+  </div>
   </div>
 </section>
 
@@ -1255,7 +1239,7 @@ if(elStrip){
 }
 
 /* =========================================================
-   6. BARRA DE PROGRESSO + CTA FIXO MOBILE
+   6. BARRA DE PROGRESSO
    ========================================================= */
 const progressBar = document.getElementById("progressBar");
 let ticking = false;
@@ -1271,29 +1255,6 @@ window.addEventListener("scroll", function(){
   if(!ticking){ requestAnimationFrame(updateProgress); ticking = true; }
 }, { passive:true });
 updateProgress();
-
-const mCta = document.getElementById("mCta");
-
-let heroPassed = false;
-let contatoVisible = false;
-function updateMcta(){
-  if(!mCta) return;
-  mCta.classList.toggle("show", heroPassed && !contatoVisible);
-}
-const heroEl = document.getElementById("topo");
-if(heroEl){
-  new IntersectionObserver(function(entries){
-    heroPassed = !entries[0].isIntersecting;
-    updateMcta();
-  }, { threshold:0 }).observe(heroEl);
-}
-const contatoEl = document.getElementById("contato");
-if(contatoEl){
-  new IntersectionObserver(function(entries){
-    contatoVisible = entries[0].isIntersecting;
-    updateMcta();
-  }, { threshold:.15 }).observe(contatoEl);
-}
 
 </script>
 </body>
