@@ -138,7 +138,7 @@ strong{font-weight:600}
   border-bottom:1px solid var(--line);
 }
 .nav__in{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:66px;
-  display:flex;align-items:center;justify-content:space-between;gap:12px}
+  display:flex;align-items:center;justify-content:space-between;gap:10px}
 .brand{display:flex;align-items:baseline;gap:11px;text-decoration:none;min-width:0}
 .brand__name{font-size:21px;letter-spacing:-.01em;white-space:nowrap}
 .brand__tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--txt-light-mute)}
@@ -147,16 +147,19 @@ strong{font-weight:600}
 .nav__links .btn--primary,.nav__links .btn--blue{color:#000}
 .nav__links a:hover{color:var(--txt-light)}
 .nav .btn{padding:11px 20px;font-size:13.5px;white-space:nowrap}
-.cta-short{display:none}
 @media(max-width:940px){
   .nav__links a:not(.btn){display:none}
-  .nav__links{gap:10px}
+  .nav__links{gap:8px}
   .brand__tag{display:none}
 }
 @media(max-width:440px){
-  .brand__name{font-size:17px}
-  .nav .btn{padding:9px 14px;font-size:12.5px}
-  .cta-full{display:none}.cta-short{display:inline}
+  .nav__in{padding:0 16px;gap:8px}
+  .brand__name{font-size:16px}
+  .nav .btn{padding:8px 12px;font-size:12px}
+}
+@media(max-width:360px){
+  .brand__name{font-size:14px}
+  .nav .btn{padding:7px 9px;font-size:11px}
 }
 
 /* ---------- hero ---------- */
@@ -199,8 +202,9 @@ strong{font-weight:600}
 .hero h1 .mark{font-style:italic;color:var(--sangue)}
 @media(max-width:960px){
   .hero{
-    padding:118px 0 58px;min-height:100vh;
+    padding:96px 0 58px;min-height:100vh;align-items:flex-start;
   }
+  .hero__grid{margin-top:12vh}
 }
 
 /* ---------- diagnóstico ---------- */
@@ -414,12 +418,10 @@ strong{font-weight:600}
 /* ---------- depoimentos ---------- */
 .tstm{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 .tstm a{position:relative;display:block;text-decoration:none;border:1px solid var(--line);border-bottom:4px solid var(--c);overflow:hidden;background:var(--ink-2)}
-.tstm a:nth-child(1){--c:var(--sangue)}
-.tstm a:nth-child(2){--c:var(--bile)}
-.tstm a:nth-child(3){--c:var(--fleuma)}
-.tstm a:nth-child(4){--c:var(--atra)}
-.tstm a:nth-child(5){--c:var(--sangue)}
-.tstm a:nth-child(6){--c:var(--bile)}
+.tstm a:nth-child(4n+1){--c:var(--sangue)}
+.tstm a:nth-child(4n+2){--c:var(--bile)}
+.tstm a:nth-child(4n+3){--c:var(--fleuma)}
+.tstm a:nth-child(4n+4){--c:var(--atra)}
 .tstm img{width:100%;height:250px;object-fit:cover;filter:grayscale(.3) brightness(.78);transition:filter .3s,transform .5s}
 .tstm a:hover img{filter:grayscale(0) brightness(.95);transform:scale(1.04)}
 .tstm__ico{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
@@ -517,8 +519,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
     <nav class="nav__links">
       <a href="#temperamentos">Os 4 Temperamentos</a>
       <a href="#ana">Quem é Ana Veloso</a>
-      <a href="produtos.html" class="btn btn--blue"><span class="cta-full">Para você</span><span class="cta-short">Você</span></a>
-      <a class="btn btn--primary" href="#contato"><span class="cta-full">Para sua empresa</span><span class="cta-short">Empresa</span></a>
+      <a href="produtos.html" class="btn btn--blue">Para você</a>
+      <a class="btn btn--primary" href="#contato">Para sua empresa</a>
     </nav>
   </div>
 </header>
@@ -911,6 +913,18 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bile)}
       </a>
       <a href="https://youtube.com/shorts/3ZsibPgUKcI" target="_blank" rel="noopener">
         <img src="https://img.youtube.com/vi/3ZsibPgUKcI/hqdefault.jpg" alt="Depoimento em vídeo de aluno do Método Origem">
+        <span class="tstm__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+      </a>
+      <a href="https://youtube.com/shorts/jk2qlkoJJTg" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/jk2qlkoJJTg/hqdefault.jpg" alt="Depoimento em vídeo de aluno do Método Origem">
+        <span class="tstm__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+      </a>
+      <a href="https://youtube.com/shorts/QVVCEvkhIoI" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/QVVCEvkhIoI/hqdefault.jpg" alt="Depoimento em vídeo de aluno do Método Origem">
+        <span class="tstm__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+      </a>
+      <a href="https://youtube.com/shorts/_2dRkMFyQ74?feature=share" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/_2dRkMFyQ74/hqdefault.jpg" alt="Depoimento em vídeo de aluno do Método Origem">
         <span class="tstm__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
       </a>
     </div>
